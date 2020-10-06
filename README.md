@@ -4,7 +4,11 @@
 - [Introdução](#introdução)
 - [Objetivo](#objetivo)
 - [Formato de input e output](#formato-de-input-e-output)
+    - [Input](#input)
+    - [Output](#output)
 - [Avaliação](#avaliação)
+    - [Entrega](#instruções-para-a-entrega)
+    - [Relatório](#relatório)
 
 ## Introdução
 
