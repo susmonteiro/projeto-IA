@@ -167,11 +167,12 @@ class RicochetRobots(Problem):
         'state' passado como argumento. A ação retornada deve ser uma
         das presentes na lista obtida pela execução de
         self.actions(state). """
-        newBoard = copy.deepcopy(state.board)
-        pos = state.board.findNextWall(action[0], action[1])
-        newBoard.set_robot_position(pos[0], pos[1])
-        newState = RRState(newBoard)
-        return newState
+        # newBoard = copy.deepcopy(state.board)
+        # pos = state.board.findNextWall(action[0], action[1])
+        # newBoard.set_robot_position(pos[0], pos[1])
+        # newState = RRState(newBoard)
+        # return newState
+        return state.board.set_robot_position(action[0], state.board.findNextWall(action[0], action[1]))
 
     def goal_test(self, state: RRState):
         """ Retorna True se e só se o estado passado como argumento é
