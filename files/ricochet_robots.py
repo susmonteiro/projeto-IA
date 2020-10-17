@@ -51,7 +51,7 @@ class Board:
         return self.robots[robot]
 
     def set_robot_position(self, robot: str, pos: tuple):
-        self.robots[robot] = (pos[0], pos[1])
+        self.robots[robot] = pos
 
     def canMove(self, robot: str, mov: str):
         pos_i = self.robots[robot][0]
