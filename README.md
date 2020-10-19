@@ -74,7 +74,7 @@ Descreve uma solução para o problema: uma sequeência de movimentos dos robôs
 ### Relatório
 - 2 páginas de texto, no máximo, com fonte 12pt
 - para além das duas páginas podem ser acrescentadas imagens, figuras e tabelas
-- incluir os resultados obtidos executando uma procura em **largura**,**profundidade**, **gananciosa** e **A\***. Estes devem conter o tempo de execução, número de nós expandidos e número de nós gerados
+- incluir os resultados obtidos executando uma procura em **largura**, **profundidade**, **gananciosa** e **A\***. Estes devem conter o tempo de execução, número de nós expandidos e número de nós gerados
 - usar a classe `InstrumentedProblem` e o exemplo que se encontra no fim do ficheiro `search.py`
 - fazer uma análise crítica dos resultados obtidos, comparando em termos de **completude**, **eficiência** e **otimalidade**
 - fazer uma análise da **heurística** implementada e compará-la a outras heurísticas avaliadas
