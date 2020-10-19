@@ -84,27 +84,27 @@ class Board:
             return not(self.wallsH[pos_i + 1][pos_j]) \
                 and self.isPosEmpty(pos_i + 1, pos_j)
 
-    def findNextWall(self, robot: str, mov: str):
+    def findNextStop(self, robot: str, mov: str):
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
         # print("find next wall:", pos_i, pos_j)
 
         if mov == self.RIGHT:
             for j in range(pos_j + 1, self.size + 1):
-                if self.wallsV[pos_i][j]:
+                if self.wallsV[pos_i][j] or not(self.isPosEmpty(pos_i, j)):
                     return (pos_i, j - 1)
         if mov == self.LEFT:
             for j in range(pos_j, -1, -1):
-                if self.wallsV[pos_i][j]:
+                if self.wallsV[pos_i][j] or not(self.isPosEmpty(pos_i, j - 1)):
                     return (pos_i, j)
         if mov == self.UP:
             for i in range(pos_i, -1, -1):
-                if self.wallsH[i][pos_j]:
+                if self.wallsH[i][pos_j] or not(self.isPosEmpty(i - 1, pos_j)):     # walls prevent index out of range (in theory)
                     return (i, pos_j)
         if mov == self.DOWN:
             for i in range(pos_i + 1, self.size + 1):
                 # print("Walls check pos:", i, pos_j)
-                if self.wallsH[i][pos_j]:
+                if self.wallsH[i][pos_j] or not(self.isPosEmpty(i, pos_j)):
                     return (i-1, pos_j)
             
     
@@ -199,7 +199,7 @@ class RicochetRobots(Problem):
         # sleep(0.5)
         newBoard = deepcopy(state.board)
         newState = RRState(newBoard)
-        pos = newState.board.findNextWall(action[0], action[1])
+        pos = newState.board.findNextStop(action[0], action[1])
         newState.board.set_robot_position(action[0], pos)
         return newState
         # pos = state.board.findNextWall(action[0], action[1])
@@ -216,6 +216,7 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
+        
         return node.state.board.distanceFromTarget()
 
 def sortRobots(lst: list, board: Board):
@@ -230,12 +231,22 @@ def sortRobots(lst: list, board: Board):
 if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
-    board = parse_instance("instances/i7.txt")
+    board = parse_instance("instances/i1.txt")
     sortRobots(sortedRobots, board)
-    res = greedy_search(RicochetRobots(board, 0))
+    res = astar_search(RicochetRobots(board, 0))
     #res = depth_first_tree_search(RicochetRobots(board))
     resMoves = res.solution()
     print(len(resMoves))
     for tpl in resMoves:
         print(tpl[0], tpl[1])
+
+    # ###
+    # if len(node.solution()) > 2 and (node.solution()[0] == ('B', 'l')) and (node.solution()[1] == ('Y', 'u')) and (node.solution()[2] == ('R', 'r')):
+    #     print()
+    #     print(node.solution())
+    #     print()
+    #     print(problem.goal_test(node.state))
+    #     print(node.state.board.robot_position('R'))
+    #     sleep(0.1)
+    # ###
     
