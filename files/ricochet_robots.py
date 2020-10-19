@@ -165,7 +165,7 @@ def parse_instance(filename: str) -> Board:
 
 
 class RicochetRobots(Problem):
-    def __init__(self, board: Board):
+    def __init__(self, board: Board, cost: int):
         """ O construtor especifica o estado inicial. """
         self.initial = RRState(board)
         # TODO: self.initial = ...
@@ -216,7 +216,7 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
-        return self.initial.board.distanceFromTarget()
+        return node.state.board.distanceFromTarget()
 
 def sortRobots(lst: list, board: Board):
         # first: target colored robot
@@ -230,9 +230,10 @@ def sortRobots(lst: list, board: Board):
 if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
-    board = parse_instance("instances/i1.txt")
+    board = parse_instance("instances/i7.txt")
     sortRobots(sortedRobots, board)
-    res = greedy_search(RicochetRobots(board))
+    res = greedy_search(RicochetRobots(board, 0))
+    #res = depth_first_tree_search(RicochetRobots(board))
     resMoves = res.solution()
     print(len(resMoves))
     for tpl in resMoves:
