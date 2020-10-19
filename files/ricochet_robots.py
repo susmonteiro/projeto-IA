@@ -117,6 +117,10 @@ class Board:
         # print("robot", self.robots[self.targetColor])        
         return self.targetPos == self.robots[self.targetColor]    
 
+    def distanceFromTarget(self):
+        return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \
+            abs(self.targetPos[1] - self.robots[self.targetColor][1])
+
     
     # TODO: outros metodos da classe
 
@@ -212,8 +216,7 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
-        return 1
-        # TODO
+        return self.initial.board.distanceFromTarget()
 
 def sortRobots(lst: list, board: Board):
         # first: target colored robot
@@ -227,19 +230,11 @@ def sortRobots(lst: list, board: Board):
 if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
-    board = parse_instance("test.txt")
+    board = parse_instance("instances/i1.txt")
     sortRobots(sortedRobots, board)
-    print("Sorted", sortedRobots)
-    board.printBoard()
-    print(board.isPosEmpty(0,0))
-    print("===== Solve =====")
-    # problem = RicochetRobots(board)
-    # initial_state = RRState(board)
+    res = greedy_search(RicochetRobots(board))
+    resMoves = res.solution()
+    print(len(resMoves))
+    for tpl in resMoves:
+        print(tpl[0], tpl[1])
     
-    # print(problem.goal_test(initial_state))
-    res = depth_first_tree_search(RicochetRobots(board))
-    print(res.path()[0])
-    # res.state.board.printBoard()
-    # Usar uma técnica de procura para resolver a instância,
-    # Retirar a solução a partir do nó resultante,
-    # Imprimir para o standard output no formato indicado.
