@@ -150,7 +150,8 @@ def parse_instance(filename: str) -> Board:
         i, j, p = file.readline().split(" ")
         i = eval(i) - 1
         j = eval(j) - 1
-        p = p[:-1]        # Removes newline at the end
+        if p[-1] == '\n': 
+            p = p[:-1]        # Removes newline at the end
         if (p == Board.LEFT):
             vertical[i][j] = 1
         elif (p == Board.RIGHT):
@@ -165,7 +166,7 @@ def parse_instance(filename: str) -> Board:
 
 
 class RicochetRobots(Problem):
-    def __init__(self, board: Board, cost: int):
+    def __init__(self, board: Board):
         """ O construtor especifica o estado inicial. """
         self.initial = RRState(board)
         # TODO: self.initial = ...
@@ -231,9 +232,9 @@ def sortRobots(lst: list, board: Board):
 if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
-    board = parse_instance("instances/i1.txt")
+    board = parse_instance(sys.argv[1])
     sortRobots(sortedRobots, board)
-    res = astar_search(RicochetRobots(board, 0))
+    res = astar_search(RicochetRobots(board))
     #res = depth_first_tree_search(RicochetRobots(board))
     resMoves = res.solution()
     print(len(resMoves))
