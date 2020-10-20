@@ -50,12 +50,6 @@ class Board:
         self.wallsH = wallsH
         self.wallsV = wallsV
 
-        ###
-        self.lastAction = tuple()
-
-    def set_lastAction(tpl):
-        self.lastAction = tpl
-
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
         return self.robots[robot]
@@ -77,9 +71,6 @@ class Board:
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
         # print("can move:", pos_i, pos_j)
-
-        #TODO check if simetric to the lastAction
-        
         if mov == self.RIGHT:
             return not(self.wallsV[pos_i][pos_j + 1]) \
                 and self.isPosEmpty(pos_i, pos_j + 1)
@@ -211,7 +202,6 @@ class RicochetRobots(Problem):
         newState = RRState(newBoard)
         pos = newState.board.findNextStop(action[0], action[1])
         newState.board.set_robot_position(action[0], pos)
-        newState.board.set_lastAction(action)
         return newState
         # pos = state.board.findNextWall(action[0], action[1])
         # state.board.set_robot_position(action[0], pos)
@@ -238,18 +228,33 @@ def sortRobots(lst: list, board: Board):
                 sortedRobots.append(robotC)
 
 
+def printSolve(res):
+    resMoves = res.solution()
+    print(len(resMoves))
+    for tpl in resMoves:
+        print(tpl[0], tpl[1])
 
 if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
     board = parse_instance(sys.argv[1])
     sortRobots(sortedRobots, board)
-    res = astar_search(RicochetRobots(board))
-    #res = depth_first_tree_search(RicochetRobots(board))
-    resMoves = res.solution()
-    print(len(resMoves))
-    for tpl in resMoves:
-        print(tpl[0], tpl[1])
+    if sys.argv[2] == "a":
+        print("==========", "Astar", "==========")
+        res = astar_search(RicochetRobots(board))
+        printSolve(res)   
+    if sys.argv[2] == "g":
+        print("==========", "Greedy", "==========")
+        res = greedy_search(RicochetRobots(board))
+        printSolve(res)  
+    if sys.argv[2] == "d":
+        print("==========", "dfs", "==========")
+        res = depth_first_tree_search(RicochetRobots(board))
+        printSolve(res)
+    if sys.argv[2] == "b":
+        print("==========", "bfs", "==========")
+        res = breadth_first_tree_search(RicochetRobots(board))
+        printSolve(res)
 
     # ###
     # if len(node.solution()) > 2 and (node.solution()[0] == ('B', 'l')) and (node.solution()[1] == ('Y', 'u')) and (node.solution()[2] == ('R', 'r')):
@@ -260,4 +265,3 @@ if __name__ == "__main__":
     #     print(node.state.board.robot_position('R'))
     #     sleep(0.1)
     # ###
-    
