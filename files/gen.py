@@ -12,7 +12,7 @@ for f in sortedLst:
         print("==========", "A*", "==========")
         board = parse_instance(f)
         sortRobots(sortedRobots, board)
-        res = astar_search(RicochetRobots(board, 0))
+        res = astar_search(RicochetRobots(board))
         resMoves = res.solution()
         print(len(resMoves))
         for tpl in resMoves:
@@ -22,7 +22,7 @@ for f in sortedLst:
         print("==========", "Greedy", "==========")
         board = parse_instance(f)
         sortRobots(sortedRobots, board)
-        res = greedy_search(RicochetRobots(board, 0))
+        res = greedy_search(RicochetRobots(board))
         resMoves = res.solution()
         print(len(resMoves))
         for tpl in resMoves:
@@ -32,7 +32,7 @@ for f in sortedLst:
         print("==========", "BFS", "==========")
         board = parse_instance(f)
         sortRobots(sortedRobots, board)
-        res = breadth_first_tree_search(RicochetRobots(board, 0))
+        res = breadth_first_tree_search(RicochetRobots(board))
         resMoves = res.solution()
         print(len(resMoves))
         for tpl in resMoves:
@@ -42,7 +42,7 @@ for f in sortedLst:
         print("==========", "DFS", "==========")
         board = parse_instance(f)
         sortRobots(sortedRobots, board)
-        res = depth_first_tree_search(RicochetRobots(board, 0))
+        res = depth_first_tree_search(RicochetRobots(board))
         resMoves = res.solution()
         print(len(resMoves))
         for tpl in resMoves:
