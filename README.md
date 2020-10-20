@@ -9,6 +9,7 @@
 - [Avaliação](#avaliação)
     - [Entrega](#instruções-para-a-entrega)
     - [Relatório](#relatório)
+- [ToDo Relatório](#todo-relatório)
 
 ## Introdução
 
@@ -78,5 +79,8 @@ Descreve uma solução para o problema: uma sequeência de movimentos dos robôs
 - usar a classe `InstrumentedProblem` e o exemplo que se encontra no fim do ficheiro `search.py`
 - fazer uma análise crítica dos resultados obtidos, comparando em termos de **completude**, **eficiência** e **otimalidade**
 - fazer uma análise da **heurística** implementada e compará-la a outras heurísticas avaliadas
+
+## ToDo Relatório
+- grande diferença entre a gananciosa e a A*: a procura A* tem em conta o custo total da solução até ao momento, prioritizando soluções com menos movimentos e como tal menos prováveis de conterem ciclos 
 
 
