@@ -51,10 +51,23 @@ class Board:
         self.wallsV = wallsV
 
         ###
-        self.lastAction = tuple()
+        self.symmetricAction = tuple()
 
-    def set_lastAction(tpl):
-        self.lastAction = tpl
+    def set_lastAction(self, tpl: tuple):
+        self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
+
+    def symmetricMove(self, move: str):
+        if move == self.RIGHT:
+            return self.LEFT
+        if move == self.LEFT:
+            return self.RIGHT
+        if move == self.UP:
+            return self.DOWN
+        if move == self.DOWN:
+            return self.UP
+        
+    def check_notSymmetricAction(self, action: tuple):
+        return not(action == self.symmetricAction)
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
@@ -73,12 +86,14 @@ class Board:
                 return False
         return True
 
-    def canMove(self, robot: str, mov: str):
+    def canMove(self, action: tuple):
+        robot = action[0]
+        mov = action[1]
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
         # print("can move:", pos_i, pos_j)
 
-        #TODO check if simetric to the lastAction
+        #TODO check if symmetric to the lastAction
         
         if mov == self.RIGHT:
             return not(self.wallsV[pos_i][pos_j + 1]) \
@@ -185,18 +200,14 @@ class RicochetRobots(Problem):
         """ Retorna uma lista de ações que podem ser executadas a
         partir do estado passado como argumento. """
         actions = []    # list of tuples ('color', 'mov')
+        movements = [Board.RIGHT, Board.LEFT, Board.UP, Board.DOWN]
 
         for robot in sortedRobots:
             # print("robot:", state.board.robot_position(robot))
-            if state.board.canMove(robot, Board.RIGHT):
-                actions.append((robot, Board.RIGHT))
-            if state.board.canMove(robot, Board.LEFT):
-                actions.append((robot, Board.LEFT))
-            if state.board.canMove(robot, Board.UP):
-                actions.append((robot, Board.UP))
-            if state.board.canMove(robot, Board.DOWN):
-                actions.append((robot, Board.DOWN))
-        # print("no more actions")
+            for move in movements:
+                action = (robot, move)
+                if state.board.check_notSymmetricAction(action) and state.board.canMove(action):
+                    actions.append(action)
         return actions
 
     def result(self, state: RRState, action):
@@ -205,7 +216,9 @@ class RicochetRobots(Problem):
         das presentes na lista obtida pela execução de
         self.actions(state). """
         # print("Current Position: ", state.board.robots[action[0]])
-        # print(action)
+        # print("New action:", action)
+        # print("Last action:", state.board.symmetricAction)
+        # print("++++")
         # sleep(0.5)
         newBoard = deepcopy(state.board)
         newState = RRState(newBoard)
