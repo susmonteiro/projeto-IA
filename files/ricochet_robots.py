@@ -71,7 +71,7 @@ class Board:
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
-        return self.robots[robot]
+        return tuple(map(lambda x: x+1, self.robots[robot]))
 
     def set_robot_position(self, robot: str, pos: tuple):
         # print("inside set robot pos", robot)
