@@ -38,9 +38,11 @@ class Board:
     UP = 'u'
     DOWN = 'd' 
 
-    CAN_MOVE = -1
-    ON_TARGET = 1
-    CANT_REACH = 0
+    ON_TARGET = -2
+    CAN_STOP = -1
+    CAN_MOVE = 0
+    CANT_REACH = 1
+    INFINITY = 999
     
     def __init__(self, size: int, robots: list, target: list,  wallsH: list, wallsV:list):
         self.size = size
@@ -63,52 +65,68 @@ class Board:
         return self.secondTargetPos != tuple()
 
     def makeNewTarget2(self, i, j):
+        print("baking a fresh new target")
         self.secondTargetPos = (i, j)
 
     def cleanTarget2(self):
         self.secondTargetPos = tuple()
 
     def minDistanceToTarget2(self):
-        minDis = self.INFINTO
-        for robotC in board.robots.keys():
-            if robotC != board.targetColor:
-                dist = calcDistToTarget(robotC, self.secondTargetPos)
+        minDis = self.INFINITY
+        for robotC in self.robots.keys():
+            if robotC != self.targetColor:
+                dist = self.distanceFromTarget(robotC, self.secondTargetPos)
                 if(dist < minDis):
                     minDis = dist
         return minDis
         
     def canSeeDirectPath(self):
-        #moves = [self.RIGHT, self.LEFT, self.UP, self.DOWN]
-        bestOption = self.CANT_REACH
+        # moves = [self.RIGHT, self.LEFT, self.UP, self.DOWN]
+        nextStopV = []
+
         #RIGHT
-        nextStop = self.findNextStop(self.targetColor, self.RIGHT)[1]
-        if nextStop == self.targetPos[1]:
-            return (self.ON_TARGET, 0, 0)
-        elif nextStop > self.targetPos[1]:
-            bestOption = (self.CAN_MOVE, self.targetPos[0], nextStop + 1)
-        
+        nextStopV.append(self.findNextStop(self.targetColor, self.RIGHT))
+        if nextStopV[0] == self.targetPos:
+            return [self.ON_TARGET]
+
         #LEFT
-        nextStop = self.findNextStop(self.targetColor, self.LEFT)[1]
-        if nextStop == self.targetPos[1]:
-            return (self.ON_TARGET, 0, 0)
-        elif bestOption == self.CANT_REACH and nextStop < self.targetPos[1]:
-            bestOption = (self.CAN_MOVE, self.targetPos[0], nextStop - 1)
-        
+        nextStopV.append(self.findNextStop(self.targetColor, self.LEFT))
+        if nextStopV[1] == self.targetPos:
+            return [self.ON_TARGET]
+
         #UP
-        nextStop = self.findNextStop(self.targetColor, self.UP)[0]
-        if nextStop == self.targetPos[0]:
-            return (self.ON_TARGET, 0, 0)
-        elif bestOption == self.CANT_REACH and nextStop < self.targetPos[0]:
-            bestOption = (self.CAN_MOVE, nextStop - 1, self.targetPos[1])
+        nextStopV.append(self.findNextStop(self.targetColor, self.UP))
+        if nextStopV[2] == self.targetPos:
+            return [self.ON_TARGET]
 
         #DOWN
-        nextStop = self.findNextStop(self.targetColor, self.DOWN)[0]
-        if nextStop == self.targetPos[0]:
-            return (self.ON_TARGET, 0, 0)
-        elif bestOption == self.CANT_REACH and nextStop > self.targetPos[0]:
-            bestOption = (self.CAN_MOVE, nextStop + 1, self.targetPos[1])
+        nextStopV.append(self.findNextStop(self.targetColor, self.DOWN))
+        if nextStopV[3] == self.targetPos:
+            return [self.ON_TARGET]
 
-        return (bestOption, 0, 0)
+        for i in range( len(nextStopV) ):
+            if nextStopV[i][0] == self.targetPos[0] \
+                or nextStopV[i][1] == self.targetPos[1]:
+                return [self.CAN_STOP]
+                
+        #RIGHT
+        if nextStopV[0][1] > self.targetPos[1]:
+            return [self.CAN_MOVE, self.robots[self.targetColor][0], self.targetPos[1] + 1]
+
+        #LEFT
+        if nextStopV[1][1] < self.targetPos[1]:
+            return [self.CAN_MOVE, self.robots[self.targetColor][0], self.targetPos[1] - 1]
+        
+        #UP
+        if nextStopV[2][0] < self.targetPos[0]:
+            return [self.CAN_MOVE, self.targetPos[0] - 1, self.robots[self.targetColor][1]]
+
+        #DOWN
+        if nextStopV[3][0] > self.targetPos[0]:
+            return [self.CAN_MOVE, self.targetPos[0] + 1, self.robots[self.targetColor][1]]
+
+        return [self.CANT_REACH]
+
 
     def set_lastAction(self, tpl: tuple):
         self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
@@ -299,20 +317,24 @@ class RicochetRobots(Problem):
         """ Função heuristica utilizada para a procura A*. """
         board = node.state.board
         if board.hasTarget2():
+            print("has2t")
             dist = board.minDistanceToTarget2()
             if (dist == 0):
                 board.cleanTarget2()
             else:
                 return dist
+                
         res = board.canSeeDirectPath()
-        if res[0]:
-            if res[0] == Board.ON_TARGET:
-                return -2
-            else:
-                return -1
-        else:
+        if res[0] == Board.ON_TARGET:
+            print("onTarget")
+            return Board.ON_TARGET
+        elif res[0] == Board.CAN_STOP:
+            return Board.CAN_STOP
+        elif res[0] == Board.CAN_MOVE:
             board.makeNewTarget2(res[1], res[2])
-            return 0
+            return Board.CAN_MOVE
+        
+        #else 
         return board.distanceFromTarget(board.targetColor, board.targetPos)
         
 
