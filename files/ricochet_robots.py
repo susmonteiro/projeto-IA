@@ -37,6 +37,10 @@ class Board:
     LEFT = 'l'
     UP = 'u'
     DOWN = 'd' 
+
+    CAN_MOVE = -1
+    ON_TARGET = 1
+    CANT_REACH = 0
     
     def __init__(self, size: int, robots: list, target: list,  wallsH: list, wallsV:list):
         self.size = size
@@ -52,6 +56,59 @@ class Board:
 
         ###
         self.symmetricAction = tuple()
+        self.secondTargetPos = tuple()
+        
+    # Target2
+    def hasTarget2(self):
+        return self.secondTargetPos != tuple()
+
+    def makeNewTarget2(self, i, j):
+        self.secondTargetPos = (i, j)
+
+    def cleanTarget2(self):
+        self.secondTargetPos = tuple()
+
+    def minDistanceToTarget2(self):
+        minDis = self.INFINTO
+        for robotC in board.robots.keys():
+            if robotC != board.targetColor:
+                dist = calcDistToTarget(robotC, self.secondTargetPos)
+                if(dist < minDis):
+                    minDis = dist
+        return minDis
+        
+    def canSeeDirectPath(self):
+        #moves = [self.RIGHT, self.LEFT, self.UP, self.DOWN]
+        bestOption = self.CANT_REACH
+        #RIGHT
+        nextStop = self.findNextStop(self.targetColor, self.RIGHT)[1]
+        if nextStop == self.targetPos[1]:
+            return (self.ON_TARGET, 0, 0)
+        elif nextStop > self.targetPos[1]:
+            bestOption = (self.CAN_MOVE, self.targetPos[0], nextStop + 1)
+        
+        #LEFT
+        nextStop = self.findNextStop(self.targetColor, self.LEFT)[1]
+        if nextStop == self.targetPos[1]:
+            return (self.ON_TARGET, 0, 0)
+        elif bestOption == self.CANT_REACH and nextStop < self.targetPos[1]:
+            bestOption = (self.CAN_MOVE, self.targetPos[0], nextStop - 1)
+        
+        #UP
+        nextStop = self.findNextStop(self.targetColor, self.UP)[0]
+        if nextStop == self.targetPos[0]:
+            return (self.ON_TARGET, 0, 0)
+        elif bestOption == self.CANT_REACH and nextStop < self.targetPos[0]:
+            bestOption = (self.CAN_MOVE, nextStop - 1, self.targetPos[1])
+
+        #DOWN
+        nextStop = self.findNextStop(self.targetColor, self.DOWN)[0]
+        if nextStop == self.targetPos[0]:
+            return (self.ON_TARGET, 0, 0)
+        elif bestOption == self.CANT_REACH and nextStop > self.targetPos[0]:
+            bestOption = (self.CAN_MOVE, nextStop + 1, self.targetPos[1])
+
+        return (bestOption, 0, 0)
 
     def set_lastAction(self, tpl: tuple):
         self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
@@ -131,7 +188,7 @@ class Board:
                 if self.wallsH[i][pos_j] or not(self.isPosEmpty(i, pos_j)):
                     return (i-1, pos_j)
             
-    
+
     def printBoard(self):
         print("robots " + str(self.robots), "target "+ str(self.targetColor) + " " + str(self.targetPos),\
             "Walls H:" + str(self.wallsH), "walls V" + str(self.wallsV), sep='\n')
@@ -141,9 +198,9 @@ class Board:
         # print("robot", self.robots[self.targetColor])        
         return self.targetPos == self.robots[self.targetColor]    
 
-    def distanceFromTarget(self):
-        return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \
-            abs(self.targetPos[1] - self.robots[self.targetColor][1])
+    def distanceFromTarget(self, robot, target):
+        return abs(target[0] - self.robots[robot][0]) + \
+            abs(target[1] - self.robots[robot][1])
 
     
     # TODO: outros metodos da classe
@@ -240,8 +297,24 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
+        board = node.state.board
+        if board.hasTarget2():
+            dist = board.minDistanceToTarget2()
+            if (dist == 0):
+                board.cleanTarget2()
+            else:
+                return dist
+        res = board.canSeeDirectPath()
+        if res[0]:
+            if res[0] == Board.ON_TARGET:
+                return -2
+            else:
+                return -1
+        else:
+            board.makeNewTarget2(res[1], res[2])
+            return 0
+        return board.distanceFromTarget(board.targetColor, board.targetPos)
         
-        return node.state.board.distanceFromTarget()
 
 def sortRobots(lst: list, board: Board):
         # first: target colored robot
