@@ -36,7 +36,8 @@ class Board:
     RIGHT = 'r'
     LEFT = 'l'
     UP = 'u'
-    DOWN = 'd' 
+    DOWN = 'd'
+    INFINITO = 999
     
     def __init__(self, size: int, robots: list, target: list,  wallsH: list, wallsV:list):
         self.size = size
@@ -49,6 +50,7 @@ class Board:
         self.targetPos = (eval(target[1])-1, eval(target[2])-1)  
         self.wallsH = wallsH
         self.wallsV = wallsV
+        self.gravity = [[self.INFINITO for _ in range(size)] for _ in range(size)] 
 
         ###
         self.symmetricAction = tuple()
@@ -71,12 +73,47 @@ class Board:
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
-        return self.robots[robot]
+        return tuple(map(lambda x: x+1, self.robots[robot]))
 
     def set_robot_position(self, robot: str, pos: tuple):
         # print("inside set robot pos", robot)
         # print(pos)
         self.robots[robot] = pos
+
+    def genGravity2(self):
+        (i, j) = self.targetPos
+        self.gravity[i][j] = 0
+        val=0
+        for k in range(0, self.size):
+            val += 1
+            self._genGravity2(i+k, j+k, val)
+            self._genGravity2(i+k, j-k, val)
+            self._genGravity2(i-k, j+k, val)
+            self._genGravity2(i-k, j-k, val)
+        
+    def _genGravity2(self, i, j, val):
+        #safety check
+        if i < 0 or j < 0 or i >= self.size or j >= self.size:
+            return
+
+
+        #up
+        for k in range(i, -1, -1):
+            if self.gravity[k][j] == self.INFINITO:
+                self.gravity[k][j] = val
+        #down
+        for k in range(i, self.size):
+            if self.gravity[k][j] == self.INFINITO:
+                self.gravity[k][j] = val
+        #left
+        for k in range(j, -1, -1):
+            if self.gravity[i][k] == self.INFINITO:
+                self.gravity[i][k] = val
+        # right
+        for k in range(j, self.size):
+            if self.gravity[i][k] == self.INFINITO:
+                self.gravity[i][k] = val
+
     
     def isPosEmpty(self, pos_i, pos_j):
         for robot in self.robots:
@@ -141,10 +178,14 @@ class Board:
         # print("robot", self.robots[self.targetColor])        
         return self.targetPos == self.robots[self.targetColor]    
 
-    def distanceFromTarget(self):
+    """ def distanceFromTarget(self):
         return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \
-            abs(self.targetPos[1] - self.robots[self.targetColor][1])
+            abs(self.targetPos[1] - self.robots[self.targetColor][1]) """
 
+    def hValue(self):
+        # get the gravity of the targetColored robot position
+        tRobotPos = self.robots[self.targetColor]
+        return self.gravity[tRobotPos[0]][tRobotPos[1]]
     
     # TODO: outros metodos da classe
 
@@ -216,7 +257,7 @@ class RicochetRobots(Problem):
         das presentes na lista obtida pela execução de
         self.actions(state). """
         # print("Current Position: ", state.board.robots[action[0]])
-        # print("New action:", action)
+        #print("actions:", self.actions(state))
         # print("Last action:", state.board.symmetricAction)
         # print("++++")
         # sleep(0.5)
@@ -241,7 +282,7 @@ class RicochetRobots(Problem):
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
         
-        return node.state.board.distanceFromTarget()
+        return node.state.board.hValue()
 
 def sortRobots(lst: list, board: Board):
         # first: target colored robot
@@ -257,8 +298,9 @@ if __name__ == "__main__":
     # Ler o ficheiro de input de sys.argv[1],
     board = parse_instance(sys.argv[1])
     sortRobots(sortedRobots, board)
+    # board.genGravity(0, 0)
+    board.genGravity2()
     res = astar_search(RicochetRobots(board))
-    #res = depth_first_tree_search(RicochetRobots(board))
     resMoves = res.solution()
     print(len(resMoves))
     for tpl in resMoves:
