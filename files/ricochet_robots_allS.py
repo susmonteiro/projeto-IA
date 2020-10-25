@@ -18,7 +18,6 @@ if __name__ == "__main__":
     # TODO:
     # Ler o ficheiro de input de sys.argv[1],
     board = parse_instance(sys.argv[1])
-    sortRobots(sortedRobots, board)
     if sys.argv[2] == "a":
         print("==========", "Astar", "==========")
         res = astar_search(RicochetRobots(board))
