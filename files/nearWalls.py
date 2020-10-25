@@ -28,6 +28,7 @@ gravityQ4 = []
 gravityV = []
 
 INF = 999
+EMPTY = -1
 RIGHT = 'r'
 LEFT = 'l'
 UP = 'u'
@@ -169,7 +170,6 @@ class Board:
     def hValue(self):
         # get the gravity of the targetColored robot position
         quadrant = self.getQuadrant(self.targetPos)
-        print("Quarant:", quadrant)
         totalGravity = 0
         
         # compute for targetRobot
@@ -213,10 +213,10 @@ class RicochetRobots(Problem):
         das presentes na lista obtida pela execução de
         self.actions(state). """
         # print("Current Position: ", state.board.robots[action[0]])
-        # print("Performing Action: ", action)
-        # print("actions:", self.actions(state))
+        #print("actions:", self.actions(state))
         # print("Last action:", state.board.symmetricAction)
-        
+        # print("++++")
+        # sleep(0.5)
         newBoard = deepcopy(state.board)
         newState = RRState(newBoard)
         pos = newState.board.findNextStop(action[0], action[1])
@@ -237,10 +237,6 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
-        print(node.solution())
-        print(node.state.board.hValue())
-        print("++++")
-        sleep(0.75)
         return node.state.board.hValue()
 
 
@@ -334,7 +330,6 @@ def genGravity(size, target):
     gravityQ2 = [[INF for _ in range(size)] for _ in range(size)] 
     gravityQ3 = [[INF for _ in range(size)] for _ in range(size)] 
     gravityQ4 = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityV = [gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4]
 
 
     # main
@@ -347,38 +342,55 @@ def genGravity(size, target):
     gravityTarget[pos[0]][pos[1]] = 0
 
     # Q1
-    for i in range(pos[0]+1):
-        gravityQ1[i][pos[1] - 1] = 1
+    if (pos[0] < size and pos[1] > 0):
+        for i in range(pos[0]+1):
+            gravityQ1[i][pos[1] - 1] = 1
 
-    for j in range(pos[1], size):
-        gravityQ1[pos[0] + 1][j] = 1
+        for j in range(pos[1], size):
+            gravityQ1[pos[0] + 1][j] = 1
+        gravityV.append(gravityQ1)
+    else:
+        gravityV.append(EMPTY)
 
     # Q2
-    for i in range(pos[0]+1):
-        gravityQ2[i][pos[1] + 1] = 1
+    if (pos[0] < size and pos[1] < size):
+        for i in range(pos[0]+1):
+            gravityQ2[i][pos[1] + 1] = 1
 
-    for j in range(pos[1] + 1):
-        gravityQ2[pos[0] + 1][j] = 1
+        for j in range(pos[1] + 1):
+            gravityQ2[pos[0] + 1][j] = 1
+        gravityV.append(gravityQ2)
+    else:
+        gravityV.append(EMPTY)
+    
 
     # Q3
-    for i in range(pos[0], size):
-        gravityQ3[i][pos[1] + 1] = 1
+    if (pos[0] > 0 and pos[1] < size):
+        for i in range(pos[0], size):
+            gravityQ3[i][pos[1] + 1] = 1
 
-    for j in range(pos[1] + 1):
-        gravityQ3[pos[0] - 1][j] = 1
+        for j in range(pos[1] + 1):
+            gravityQ3[pos[0] - 1][j] = 1
+        gravityV.append(gravityQ3)
+    else:
+        gravityV.append(EMPTY)
+    
 
     # Q4
-    for i in range(pos[0], size):
-        gravityQ4[i][pos[1] - 1] = 1
+    if (pos[0] > 0 and pos[1] < size):
+        for i in range(pos[0], size):
+            gravityQ4[i][pos[1] - 1] = 1
 
-    for j in range(pos[1], size):
-        gravityQ4[pos[0] - 1][j] = 1
+        for j in range(pos[1], size):
+            gravityQ4[pos[0] - 1][j] = 1
+        gravityV.append(gravityQ4)
+    else:
+        gravityV.append(EMPTY)
+    
 
     for g in gravityV:
-        propagateGravity(g, size) 
-        for line in g:
-            print(line)
-        print()
+        if g != EMPTY:
+            propagateGravity(g, size) 
 
 
 def sortRobots(robots, target):

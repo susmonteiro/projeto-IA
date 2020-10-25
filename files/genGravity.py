@@ -43,12 +43,12 @@ gravityV = [gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4]
 
 
 for i in range(size):
-    gravityMain[i][pos[1]] = 1
+    gravityTarget[i][pos[1]] = 1
 
 for j in range(size):
-    gravityMain[pos[0]][j] = 1
+    gravityTarget[pos[0]][j] = 1
 
-gravityMain[pos[0]][pos[1]] = 0
+gravityTarget[pos[0]][pos[1]] = 0
 
 
 # Q1
