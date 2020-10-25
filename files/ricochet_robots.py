@@ -15,12 +15,18 @@ from time import sleep
 from copy import deepcopy
 
 # GLOBAL VARS
-INFINITO = 999
+vari = 0
+varj = 0
 sortedRobots = []
 wallsH = []
 wallsV = []
-gravity = []
+gravityTarget = []
+gravityQ1 = []
+gravityQ2 = []
+gravityQ3 = []
+gravityQ4 = []
 
+INF = 999
 RIGHT = 'r'
 LEFT = 'l'
 UP = 'u'
@@ -257,48 +263,98 @@ def parse_instance(filename: str) -> Board:
         elif (p == UP):
             wallsH[i][j] = 1
         elif (p == DOWN):
-            wallsH[i+1][j] = 1
-            
+            wallsH[i+1][j] = 1    
+    
     sortRobots(robots, target)
-    genGravity(target, size)
+    genGravity( size, target)
     return Board(size, robots, target)
 
 
-def genGravity(target, size):
-    global gravity
-    gravity = [[INFINITO for _ in range(size)] for _ in range(size)]
-    (i, j) = (eval(target[1])-1, eval(target[2])-1)
-    gravity[i][j] = 0
-    val=0
-    for k in range(0, size):
-        val += 1
-        _genGravity(i+k, j+k, val, size)
-        _genGravity(i+k, j-k, val, size)
-        _genGravity(i-k, j+k, val, size)
-        _genGravity(i-k, j-k, val, size)
-    
-def _genGravity(i, j, val, size):
-    #safety check
-    if i < 0 or j < 0 or i >= size or j >= size:
-        return
-    global gravity
-    #up
-    for k in range(i, -1, -1):
-        if gravity[k][j] == INFINITO:
-            gravity[k][j] = val
-    #down
-    for k in range(i, size):
-        if gravity[k][j] == INFINITO:
-            gravity[k][j] = val
-    #left
-    for k in range(j, -1, -1):
-        if gravity[i][k] == INFINITO:
-            gravity[i][k] = val
-    # right
-    for k in range(j, size):
-        if gravity[i][k] == INFINITO:
-            gravity[i][k] = val
 
+
+def propagateGravity(gravity, size):
+    global vari
+    global varj
+    varj = 1
+    vari = 1
+    _propagateGravity(gravity, 0,0, size)
+
+    varj = -1
+    _propagateGravity(gravity, 0, size-1, size)
+
+    vari = -1
+    _propagateGravity(gravity, size-1, size-1, size)
+
+    varj = 1
+    _propagateGravity(gravity, size-1, 0, size)
+
+def _propagateGravity(gravity, i, j, size):  
+    if (i == size or j == size or i == -1 or j == -1):
+        return INF + 1
+
+    elif (gravity[i][j] < INF):
+        return gravity[i][j]
+
+    else:
+        gravity[i][j] = min(_propagateGravity(gravity, i+vari, j, size), _propagateGravity(gravity, i, j+varj, size)) + 1
+        return gravity[i][j]
+
+
+
+
+def genGravity(size, target):
+    global gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4
+
+    pos = (eval(target[1]) -1, eval(target[2])-1)
+    
+    gravityTarget = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ2 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ3 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ4 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityV = [gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4]
+
+
+    # main
+    for i in range(size):
+        print(i, pos[1])
+        gravityTarget[i][pos[1]] = 1
+
+    for j in range(size):
+        gravityTarget[pos[0]][j] = 1
+
+    gravityTarget[pos[0]][pos[1]] = 0
+
+    # Q1
+    for i in range(pos[0]+1):
+        gravityQ1[i][pos[1] - 1] = 1
+
+    for j in range(pos[1], size):
+        gravityQ1[pos[0] + 1][j] = 1
+
+    # Q2
+    for i in range(pos[0]+1):
+        gravityQ2[i][pos[1] + 1] = 1
+
+    for j in range(pos[1] + 1):
+        gravityQ2[pos[0] + 1][j] = 1
+
+    # Q3
+    for i in range(pos[0], size):
+        gravityQ3[i][pos[1] + 1] = 1
+
+    for j in range(pos[1] + 1):
+        gravityQ3[pos[0] - 1][j] = 1
+
+    # Q4
+    for i in range(pos[0], size):
+        gravityQ4[i][pos[1] - 1] = 1
+
+    for j in range(pos[1], size):
+        gravityQ4[pos[0] - 1][j] = 1
+
+    for g in gravityV:
+        propagateGravity(g, size) 
 
 
 def sortRobots(robots, target):

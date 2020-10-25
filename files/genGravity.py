@@ -1,63 +1,97 @@
 from time import sleep
 
-def genGravity(i, j):  
-        #sleep(0.5)     
-        #print(i, j)
+def genGravity(gravity, i, j):  
+    if (i == size or j == size or i == -1 or j == -1):
+        return INF + 1
 
-        if (i == size or j == size):
-            #print("INFINITO")
-            return INF + 1
+    elif (gravity[i][j] < INF):
+        return gravity[i][j]
 
-        elif (pos == (i, j)):
-            #print("TARGET")
-            gravity[i][j] = 0
-            return 0
+    else:
+        gravity[i][j] = min(genGravity(gravity, i+vari, j), genGravity(gravity, i, j+varj)) + 1
+        return gravity[i][j]
 
-        elif (i == pos[0] or j == pos[1]):
-            #print("LINHA")
-            gravity[i][j] = 1
-            return 1
 
-        elif (gravity[i][j] < INF):
-            #print("ME")
-            return gravity[i][j]
+def _genGravity(gravity):
+    global vari
+    global varj
+    varj = 1
+    vari = 1
+    genGravity(gravity, 0,0)
 
-        else:
-            #print("ELSE")
-            #gravity[i][j] = min(genGravity(i+1, j), genGravity(i, j+1)) + 1
-            gravity[i][j] = min(genGravity(i+vari, j), genGravity(i, j+varj)) + 1
-                #genGravity(i, j-1), genGravity(i-1, j)) + 1
-            #print(gravity)
-            return gravity[i][j]
+    varj = -1
+    genGravity(gravity, 0, size-1)
 
-        #elif (gravity[i][j] < INF):
-        #    print(gravity[i][j])
-        #    return gravity[i][j] """
+    vari = -1
+    genGravity(gravity, size-1, size-1)
 
+    varj = 1
+    genGravity(gravity, size-1, 0)
+
+
+vari = 0
+varj = 0
 INF = 999
 size = 6
-pos = (3,2)
-gravity = [[INF for _ in range(size)] for _ in range(size)] 
+pos = (4,3)
+gravityTarget = [[INF for _ in range(size)] for _ in range(size)] 
+gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
+gravityQ2 = [[INF for _ in range(size)] for _ in range(size)] 
+gravityQ3 = [[INF for _ in range(size)] for _ in range(size)] 
+gravityQ4 = [[INF for _ in range(size)] for _ in range(size)] 
+gravityV = [gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4]
 
-vari = 1
-varj = 1
-genGravity(0,0)
 
-varj = -1
-genGravity(0, size-1)
+for i in range(size):
+    gravityMain[i][pos[1]] = 1
 
-vari = -1
-genGravity(size-1, size-1)
+for j in range(size):
+    gravityMain[pos[0]][j] = 1
 
-varj = 1
-genGravity(size-1, 0)
+gravityMain[pos[0]][pos[1]] = 0
 
-gravity[pos[0]][pos[1]] = 0
 
-#[[ genGravity(i, j) for i in range(size)] for j in range(size)]
-print(gravity)
+# Q1
+for i in range(pos[0]+1):
+    gravityQ1[i][pos[1] - 1] = 1
+
+for j in range(pos[1], size):
+    gravityQ1[pos[0] + 1][j] = 1
+
+# Q2
+for i in range(pos[0]+1):
+    gravityQ2[i][pos[1] + 1] = 1
+
+for j in range(pos[1] + 1):
+    gravityQ2[pos[0] + 1][j] = 1
+
+# Q3
+for i in range(pos[0], size):
+    gravityQ3[i][pos[1] + 1] = 1
+
+for j in range(pos[1] + 1):
+    gravityQ3[pos[0] - 1][j] = 1
+
+# Q4
+for i in range(pos[0], size):
+    gravityQ4[i][pos[1] - 1] = 1
+
+for j in range(pos[1], size):
+    gravityQ4[pos[0] - 1][j] = 1
+
+
+
+
+i = 1
+for q in gravityV:
+    _genGravity(q)
+    print("Gravity", i)
+    for line in q:
+        print(line)
+    i += 1
 
 '''
+
  _ _ _
 | | | |
 | | | |
