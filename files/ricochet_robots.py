@@ -146,14 +146,17 @@ class Board:
         return self.targetPos == self.robots[self.targetColor]    
 
     """ def distanceFromTarget(self):
-        return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \
+        return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \s
             abs(self.targetPos[1] - self.robots[self.targetColor][1]) """
 
     def hValue(self):
         # get the gravity of the targetColored robot position
-        tRobotPos = self.robots[self.targetColor]
-        return gravity[tRobotPos[0]][tRobotPos[1]]
-    
+        totalGravity = 0
+        for c, (i, j) in self.robots.items():
+            totalGravity += gravity[i][j]            
+            if c != self.targetColor and (i, j) == self.targetPos:
+                    totalGravity += self.size//2
+        return totalGravity
 
     # TODO: outros metodos da classe
 
@@ -210,7 +213,6 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
-        
         return node.state.board.hValue()
 
 
@@ -303,7 +305,7 @@ def sortRobots(robots, target):
     # first: target colored robot
     global sortedRobots
     sortedRobots.append(target[0])
-    for (robotC, i, j) in robots:
+    for (robotC, _, _) in robots:
         if robotC != target[0]:
             sortedRobots.append(robotC)
 
