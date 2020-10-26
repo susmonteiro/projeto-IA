@@ -44,7 +44,12 @@ class RRState:
         """ Este método é utilizado em caso de empate na gestão da lista
         de abertos nas procuras informadas. """
         return self.id < other.id
-
+    
+    def __eq__(self, other):
+        return isinstance(other, RRState) and self.board == other.board
+    
+    def __hash__(self):
+        return hash(self.board)
 
 class Board:
     """ Representacao interna de um tabuleiro de Ricochet Robots. """
@@ -59,24 +64,11 @@ class Board:
         self.targetColor = target[0]
         self.targetPos = (eval(target[1])-1, eval(target[2])-1)  
 
-        ###
-        self.symmetricAction = tuple()
-
-    def set_lastAction(self, tpl: tuple):
-        self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
-
-    def symmetricMove(self, move: str):
-        if move == RIGHT:
-            return LEFT
-        if move == LEFT:
-            return RIGHT
-        if move == UP:
-            return DOWN
-        if move == DOWN:
-            return UP
-        
-    def check_notSymmetricAction(self, action: tuple):
-        return not(action == self.symmetricAction)
+    def __eq__(self, other):
+        return isinstance(other, Board) and self.robots == other.robots
+    
+    def __hash__(self):
+        return hash(tuple(self.robots.items()))
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
@@ -102,8 +94,6 @@ class Board:
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
         # print("can move:", pos_i, pos_j)
-
-        #TODO check if symmetric to the lastAction
         
         if mov == RIGHT:
             return not(wallsV[pos_i][pos_j + 1]) \
@@ -181,7 +171,7 @@ class RicochetRobots(Problem):
             # print("robot:", state.board.robot_position(robot))
             for move in movements:
                 action = (robot, move)
-                if state.board.check_notSymmetricAction(action) and state.board.canMove(action):
+                if state.board.canMove(action):
                     actions.append(action)
         return actions
 
@@ -199,7 +189,6 @@ class RicochetRobots(Problem):
         newState = RRState(newBoard)
         pos = newState.board.findNextStop(action[0], action[1])
         newState.board.set_robot_position(action[0], pos)
-        newState.board.set_lastAction(action)
         return newState
         # pos = state.board.findNextWall(action[0], action[1])
         # state.board.set_robot_position(action[0], pos)
@@ -262,7 +251,6 @@ def parse_instance(filename: str) -> Board:
     
     sortRobots(robots, target)
     return Board(size, robots, target)
-
 
 def sortRobots(robots, target):
     # first: target colored robot
