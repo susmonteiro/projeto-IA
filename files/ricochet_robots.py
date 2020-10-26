@@ -30,6 +30,15 @@ class RRState:
         """ Este método é utilizado em caso de empate na gestão da lista
         de abertos nas procuras informadas. """
         return self.id < other.id
+    
+    def __eq__(self, other):
+        # print("Inside EQ")
+        # if not self.board ==  other.board:
+        #     print("not eqs")
+        return isinstance(other, RRState) and self.board == other.board
+    
+    def __hash__(self):
+        return hash(self.board)
 
 class Board:
     """ Representacao interna de um tabuleiro de Ricochet Robots. """
@@ -55,6 +64,12 @@ class Board:
         ###
         self.symmetricAction = tuple()
 
+    def __eq__(self, other):
+        return isinstance(other, Board) and self.robots == other.robots
+    
+    def __hash__(self):
+        return hash(tuple(self.robots.items()))
+    
     def set_lastAction(self, tpl: tuple):
         self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
 
