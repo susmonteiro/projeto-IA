@@ -20,18 +20,28 @@ varj = 0
 sortedRobots = []
 wallsH = []
 wallsV = []
+
+mode_flag = 0
 gravityTarget = []
 gravityQ1 = []
 gravityQ2 = []
 gravityQ3 = []
 gravityQ4 = []
-gravityV = []
+gravityVector = []
 
+#MODES
+QUAD_1 = 1
+QUAD_2V = 2
+QUAD_2H = 3
+QUAD_4 = 4
+
+WEIGHT = 0
 INF = 999
 RIGHT = 'r'
 LEFT = 'l'
 UP = 'u'
 DOWN = 'd'
+movements = [RIGHT, LEFT, UP, DOWN]
 Q1 = 1
 Q2 = 2
 Q3 = 3
@@ -50,6 +60,13 @@ class RRState:
         """ Este método é utilizado em caso de empate na gestão da lista
         de abertos nas procuras informadas. """
         return self.id < other.id
+    
+    def __eq__(self, other):
+        return isinstance(other, RRState) and self.board == other.board
+    
+    def __hash__(self):
+        return hash(self.board)
+
 
 class Board:
     """ Representacao interna de um tabuleiro de Ricochet Robots. """
@@ -64,44 +81,51 @@ class Board:
         self.targetColor = target[0]
         self.targetPos = (eval(target[1])-1, eval(target[2])-1)  
 
-        ###
-        self.symmetricAction = tuple()
-
-    def set_lastAction(self, tpl: tuple):
-        self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
-
-    def symmetricMove(self, move: str):
-        if move == RIGHT:
-            return LEFT
-        if move == LEFT:
-            return RIGHT
-        if move == UP:
-            return DOWN
-        if move == DOWN:
-            return UP
-        
-    def check_notSymmetricAction(self, action: tuple):
-        return not(action == self.symmetricAction)
+    def __eq__(self, other):
+        return isinstance(other, Board) and self.robots == other.robots
+    
+    def __hash__(self):
+        return hash(tuple(self.robots.items()))
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
         return tuple(map(lambda x: x+1, self.robots[robot]))
 
     def set_robot_position(self, robot: str, pos: tuple):
-        # print("inside set robot pos", robot)
-        # print(pos)
         self.robots[robot] = pos
 
-    def getQuadrant(self, pos):
+    def getQuadrant2H(self, pos):
+        if pos[0] < self.targetPos[0]:
+            return [Q1]
+        if pos[0] > self.targetPos[0]:
+            return [Q2]
+        if pos[0] == self.targetPos[0]:
+            return [Q1, Q2]
+            
+    def getQuadrant2V(self, pos):
+        if pos[1] < self.targetPos[1]:
+            return [Q1]
+        if pos[1] > self.targetPos[1]:
+            return [Q2]
+        if pos[1] == self.targetPos[1]:
+            return [Q1, Q2]
+            
+    def getQuadrant4(self, pos):
+        answer = []
+        # Q1 not in-line
         if pos[0] <= self.targetPos[0] and pos[1] >= self.targetPos[1]:
-            return Q1
+            answer.append(Q1)
+        # Q2 not in-line
         if pos[0] <= self.targetPos[0] and pos[1] <= self.targetPos[1]:
-            return Q2
+            answer.append(Q2)
+        # Q3 not in-line
         if pos[0] >= self.targetPos[0] and pos[1] <= self.targetPos[1]:
-            return Q3
+            answer.append(Q3)
+        # Q4 not in-line
         if pos[0] >= self.targetPos[0] and pos[1] >= self.targetPos[1]:
-            return Q4
-    
+            answer.append(Q4)
+        
+        return answer
     
     def isPosEmpty(self, pos_i, pos_j):
         for robot in self.robots:
@@ -117,8 +141,6 @@ class Board:
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
         # print("can move:", pos_i, pos_j)
-
-        #TODO check if symmetric to the lastAction
         
         if mov == RIGHT:
             return not(wallsV[pos_i][pos_j + 1]) \
@@ -167,19 +189,46 @@ class Board:
         return self.targetPos == self.robots[self.targetColor]    
 
     def hValue(self):
-        # get the gravity of the targetColored robot position
-        quadrant = self.getQuadrant(self.targetPos)
-        print("Quarant:", quadrant)
         totalGravity = 0
-        
-        # compute for targetRobot
-        totalGravity += gravityTarget[self.targetPos[0]][self.targetPos[1]]
-        
-        # compute for other Robots        
-        for c, (i, j) in self.robots.items():
-            if c != self.targetColor:
-                totalGravity += gravityV[quadrant][i][j]
-        
+        # if only one Quadrant, returns the sum of all robots gravity using gravityTarget
+        if mode_flag == QUAD_1:
+            for (i, j) in self.robots.values():
+                totalGravity += gravityTarget[i][j]
+            return totalGravity
+   
+        # get the gravity of the targetColored robot position
+        totalGravity += (gravityTarget[self.targetPos[0]][self.targetPos[1]])
+
+        if mode_flag == QUAD_2H:
+            Qlist = self.getQuadrant2H(self.targetPos)
+            
+            for c, (i, j) in self.robots.items():
+                if c != self.targetColor:
+                    tmpGravity = INF
+                    for q in Qlist:
+                        tmpGravity = min(tmpGravity, gravityVector[q][i][j])
+                    totalGravity += tmpGravity*WEIGHT
+             
+        elif mode_flag == QUAD_2V:
+            Qlist = self.getQuadrant2V(self.targetPos)
+            
+            for c, (i, j) in self.robots.items():
+                if c != self.targetColor:
+                    tmpGravity = INF
+                    for q in Qlist:
+                        tmpGravity = min(tmpGravity, gravityVector[q][i][j])
+                    totalGravity += tmpGravity*WEIGHT
+
+        elif mode_flag == QUAD_4:
+            Qlist = self.getQuadrant4(self.targetPos)
+            
+            for c, (i, j) in self.robots.items():
+                if c != self.targetColor:
+                    tmpGravity = INF
+                    for q in Qlist:
+                        tmpGravity = min(tmpGravity, gravityVector[q][i][j])
+                    totalGravity += tmpGravity*WEIGHT
+            
         return totalGravity
 
     # TODO: outros metodos da classe
@@ -197,13 +246,12 @@ class RicochetRobots(Problem):
         """ Retorna uma lista de ações que podem ser executadas a
         partir do estado passado como argumento. """
         actions = []    # list of tuples ('color', 'mov')
-        movements = [RIGHT, LEFT, UP, DOWN]
 
         for robot in sortedRobots:
             # print("robot:", state.board.robot_position(robot))
             for move in movements:
                 action = (robot, move)
-                if state.board.check_notSymmetricAction(action) and state.board.canMove(action):
+                if state.board.canMove(action):
                     actions.append(action)
         return actions
 
@@ -221,7 +269,6 @@ class RicochetRobots(Problem):
         newState = RRState(newBoard)
         pos = newState.board.findNextStop(action[0], action[1])
         newState.board.set_robot_position(action[0], pos)
-        newState.board.set_lastAction(action)
         return newState
         # pos = state.board.findNextWall(action[0], action[1])
         # state.board.set_robot_position(action[0], pos)
@@ -237,10 +284,10 @@ class RicochetRobots(Problem):
         
     def h(self, node: Node):
         """ Função heuristica utilizada para a procura A*. """
-        print(node.solution())
-        print(node.state.board.hValue())
-        print("++++")
-        sleep(0.75)
+        #print(node.solution())
+        #print(node.state.board.hValue())
+        #print("++++")
+        #sleep(0.75)
         return node.state.board.hValue()
 
 
@@ -255,6 +302,7 @@ def parse_instance(filename: str) -> Board:
     # TODO
     global wallsV
     global wallsH
+    global WEIGHT
     file = open(filename, 'r')
     size = eval(file.readline())      # Read Board size from file  
     robots = []
@@ -287,11 +335,10 @@ def parse_instance(filename: str) -> Board:
         elif (p == DOWN):
             wallsH[i+1][j] = 1    
     
+    WEIGHT = size + 1
     sortRobots(robots, target)
     genGravity( size, target)
     return Board(size, robots, target)
-
-
 
 
 def propagateGravity(gravity, size):
@@ -322,20 +369,33 @@ def _propagateGravity(gravity, i, j, size):
         return gravity[i][j]
 
 
-
-
 def genGravity(size, target):
-    global gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4, gravityV
+    pos = (eval(target[1]) -1, eval(target[2])-1)    
 
-    pos = (eval(target[1]) -1, eval(target[2])-1)
-    
+    if (pos[0] == 0 or pos[0] == size-1) and (pos[1] == 0 or pos[1] == size-1):
+        # corner
+        genGravity1(size, pos)
+        return
+    elif (pos[1] == 0 or pos[1] == size-1): # and (pos[0] != 0 or pos[0] != size-1)
+        #horizontal line
+        genGravity2Horizontal(size, pos)
+        return
+    elif (pos[0] == 0 or pos[0] == size-1): # and (pos[1] != 0 or pos[1] != size-1)
+        #vertical line
+        genGravity2Vertical(size, pos)
+        return
+    else:
+        genGravity4(size, pos)
+
+    for g in gravityVector:
+        propagateGravity(g, size) 
+        """ for line in g:
+            print(line)
+        print() """
+
+def genGravity1(size, pos):
+    global gravityTarget, gravityVector, mode_flag
     gravityTarget = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityQ2 = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityQ3 = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityQ4 = [[INF for _ in range(size)] for _ in range(size)] 
-    gravityV = [gravityTarget, gravityQ1, gravityQ2, gravityQ3, gravityQ4]
-
 
     # main
     for i in range(size):
@@ -345,6 +405,57 @@ def genGravity(size, target):
         gravityTarget[pos[0]][j] = 1
 
     gravityTarget[pos[0]][pos[1]] = 0
+
+    mode_flag = QUAD_1 
+    gravityVector.append(gravityTarget)
+
+def genGravity2Horizontal(size, pos):
+    global gravityQ1, gravityQ2, gravityVector, mode_flag
+    genGravity1(size, pos)
+
+    gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ2 = [[INF for _ in range(size)] for _ in range(size)]
+
+    # Q1
+    for j in range(size):
+        gravityQ1[pos[0] + 1][j] = 1
+
+    # Q2
+    for j in range(size):
+        gravityQ2[pos[0] - 1][j] = 1
+
+    mode_flag = QUAD_2H
+    gravityVector.append(gravityQ1)
+    gravityVector.append(gravityQ2)
+
+def genGravity2Vertical(size, pos):
+    global gravityQ1, gravityQ2, gravityVector, mode_flag
+    genGravity1(size, pos)
+
+    gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ2 = [[INF for _ in range(size)] for _ in range(size)]
+
+    # Q1
+    for i in range(size):
+        gravityQ1[i][pos[1] + 1] = 1
+
+    # Q2
+    for i in range(size):
+        gravityQ2[i][pos[1] - 1] = 1
+
+    mode_flag = QUAD_2V
+    gravityVector.append(gravityQ1)
+    gravityVector.append(gravityQ2)
+
+def genGravity4(size, pos):
+    global gravityQ1, gravityQ2, gravityQ3, gravityQ4, gravityVector, mode_flag
+    
+    gravityQ1 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ2 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ3 = [[INF for _ in range(size)] for _ in range(size)] 
+    gravityQ4 = [[INF for _ in range(size)] for _ in range(size)] 
+
+    genGravity1(size, pos)
 
     # Q1
     for i in range(pos[0]+1):
@@ -374,11 +485,15 @@ def genGravity(size, target):
     for j in range(pos[1], size):
         gravityQ4[pos[0] - 1][j] = 1
 
-    for g in gravityV:
-        propagateGravity(g, size) 
-        for line in g:
-            print(line)
-        print()
+    mode_flag = QUAD_4
+    gravityVector.append(gravityQ1)
+    gravityVector.append(gravityQ2)
+    gravityVector.append(gravityQ3)
+    gravityVector.append(gravityQ4)
+    
+
+
+
 
 
 def sortRobots(robots, target):

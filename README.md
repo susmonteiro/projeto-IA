@@ -84,3 +84,5 @@ Descreve uma solução para o problema: uma sequeência de movimentos dos robôs
 - grande diferença entre a gananciosa e a A*: a procura A* tem em conta o custo total da solução até ao momento, prioritizando soluções com menos movimentos e como tal menos prováveis de conterem ciclos 
 
 
+- gravity a contar com as paredes -> na recursão/iteração verificar se o min que tenta obter não tem uma parede no meio
+
