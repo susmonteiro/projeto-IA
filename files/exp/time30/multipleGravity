@@ -1,0 +1,2687 @@
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/1.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 1
+    ======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/1.rr========
+    ^
+SyntaxError: invalid syntax
+Command exited with non-zero status 1
+27876
+0:00.20
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/10.rr========
+7
+R u
+Y r
+Y d
+G d
+B u
+G l
+G u
+28456
+0:00.33
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/11.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27900
+0:00.15
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/12.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28176
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/13.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28008
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/14.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28016
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/15.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/16.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27868
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/17.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27808
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/18.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28092
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/19.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28136
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/2.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27912
+0:00.15
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/20.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27912
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/3.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27960
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/4.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27880
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/5.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28088
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/6.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28284
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/7.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28012
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/8.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28136
+0:00.14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/9.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28008
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/1.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28052
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/10.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27932
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/11.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/12.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27916
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/13.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28012
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/14.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27888
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/15.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27908
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/16.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28012
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/17.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27888
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/18.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28124
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/19.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28016
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/2.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/20.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/3.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28124
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/4.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/5.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27900
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/6.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/7.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27916
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/8.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28080
+0:00.14
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/9.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28172
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/1.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28088
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/10.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28168
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/11.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27924
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/12.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28012
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/13.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28084
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/14.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28004
+0:00.15
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/15.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27916
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/16.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27840
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/17.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28008
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/18.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27924
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/19.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28176
+0:00.15
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/2.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27884
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/20.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27900
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/3.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28280
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/4.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28084
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/5.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28084
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/6.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28004
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/7.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28124
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/8.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28280
+0:00.14
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/9.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/1.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/10.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/11.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/12.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28024
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/13.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27880
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/14.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/15.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28088
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/16.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27968
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/17.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28180
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/18.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28004
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/19.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27904
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/2.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27924
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/20.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27808
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/3.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28020
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/4.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28084
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/5.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27896
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/6.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28280
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/7.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/8.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27924
+0:00.16
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/9.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28116
+0:00.17
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/1.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28132
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/10.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27880
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/11.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27784
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/12.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28128
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/13.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28096
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/14.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28280
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/15.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27864
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/16.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28276
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/17.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27804
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/18.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27896
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/19.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28000
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/2.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27884
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/20.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+28284
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/3.rr========
+Traceback (most recent call last):
+  File "ricochet_robots.py", line 516, in <module>
+    board = parse_instance(sys.argv[1])
+  File "ricochet_robots.py", line 307, in parse_instance
+    size = eval(file.readline())      # Read Board size from file  
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+Command exited with non-zero status 1
+27812
+0:00.14
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/4.rr========
+10
+Y u
+B r
+Y r
+Y u
+Y r
+G r
+G u
+G r
+G d
+G l
+28356
+0:00.27
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/5.rr========
+1
+Y d
+28136
+0:00.15
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/6.rr========
+10
+Y l
+R d
+B u
+R l
+Y d
+Y l
+R u
+R r
+R u
+R l
+28300
+0:01.89
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/7.rr========
+Command exited with non-zero status 124
+34048
+0:30.00
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/8.rr========
+Command exited with non-zero status 124
+33912
+0:30.00
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/9.rr========
+Command exited with non-zero status 124
+34276
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/1.rr========
+11
+Y d
+G r
+G d
+Y r
+Y u
+Y l
+R d
+R r
+Y d
+R l
+R u
+30952
+0:05.69
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/10.rr========
+Command exited with non-zero status 124
+33652
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/11.rr========
+15
+G r
+G d
+Y u
+Y l
+Y u
+R r
+R u
+R r
+G r
+G u
+Y l
+Y d
+Y l
+Y u
+R l
+29260
+0:01.52
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/12.rr========
+Command exited with non-zero status 124
+35416
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/13.rr========
+15
+G l
+Y l
+Y u
+Y l
+B l
+B d
+B r
+R l
+R d
+R l
+R u
+B l
+R l
+B u
+B l
+28760
+0:00.62
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/14.rr========
+13
+G r
+R r
+R d
+R r
+B r
+B d
+B l
+B d
+B l
+R d
+B r
+B u
+B r
+30916
+0:07.94
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/15.rr========
+11
+G r
+B d
+B l
+B d
+B r
+B d
+B r
+Y r
+Y d
+R r
+Y r
+29124
+0:01.78
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/16.rr========
+Command exited with non-zero status 124
+34124
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/17.rr========
+Command exited with non-zero status 124
+32968
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/18.rr========
+Command exited with non-zero status 124
+33868
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/19.rr========
+11
+B u
+B r
+B d
+R d
+G r
+G d
+Y d
+Y r
+Y u
+Y l
+Y d
+29384
+0:02.07
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/2.rr========
+Command exited with non-zero status 124
+33248
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/20.rr========
+13
+G u
+R d
+R r
+R u
+G l
+Y d
+Y r
+Y u
+Y l
+G d
+G l
+G u
+G l
+28240
+0:00.55
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/3.rr========
+13
+B r
+B d
+B r
+B u
+R u
+R r
+R d
+R r
+B d
+R l
+R u
+B l
+R d
+29832
+0:03.63
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/4.rr========
+Command exited with non-zero status 124
+35212
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/5.rr========
+11
+Y l
+G d
+G l
+R d
+R l
+R u
+R l
+B d
+B l
+B d
+B r
+28812
+0:00.86
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/6.rr========
+Command exited with non-zero status 124
+32916
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/7.rr========
+Command exited with non-zero status 124
+35060
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/8.rr========
+Command exited with non-zero status 124
+34272
+0:30.00
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/9.rr========
+6
+Y r
+Y u
+B u
+B r
+G r
+B d
+29552
+0:01.97
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/1.rr========
+3
+R r
+Y d
+Y r
+28148
+0:00.48
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/10.rr========
+6
+Y u
+Y l
+Y d
+B d
+B l
+B u
+28276
+0:00.23
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/11.rr========
+Command exited with non-zero status 124
+27884
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/12.rr========
+Command exited with non-zero status 124
+33508
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/13.rr========
+Command exited with non-zero status 124
+27520
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/14.rr========
+Command exited with non-zero status 124
+27732
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/15.rr========
+6
+G r
+R r
+Y r
+Y u
+B u
+B r
+28108
+0:02.99
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/16.rr========
+12
+R d
+Y d
+G u
+B l
+B d
+R r
+G d
+G l
+G u
+G r
+G d
+G r
+30864
+0:14.82
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/17.rr========
+Command exited with non-zero status 124
+27780
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/18.rr========
+Command exited with non-zero status 124
+34208
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/19.rr========
+13
+B r
+B d
+G u
+G r
+G u
+G r
+G u
+G l
+G d
+G l
+G d
+G r
+G u
+28564
+0:00.85
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/2.rr========
+14
+R d
+Y d
+R r
+R u
+B r
+B d
+B l
+B d
+G r
+R r
+G d
+G l
+G d
+G r
+29376
+0:02.66
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/20.rr========
+Command exited with non-zero status 124
+34236
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/3.rr========
+Command exited with non-zero status 124
+34148
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/4.rr========
+Command exited with non-zero status 124
+33512
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/5.rr========
+Command exited with non-zero status 124
+27616
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/6.rr========
+Command exited with non-zero status 124
+33192
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/7.rr========
+11
+G u
+R d
+R l
+B l
+B d
+B r
+B u
+B r
+B d
+B r
+B u
+28372
+0:00.38
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/8.rr========
+Command exited with non-zero status 124
+34512
+0:30.00
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/9.rr========
+6
+B u
+R r
+R d
+R l
+R d
+R l
+28404
+0:05.38
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/1.rr========
+4
+Y r
+G r
+Y u
+Y l
+28540
+0:00.20
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/10.rr========
+9
+G r
+Y u
+Y r
+Y d
+Y l
+Y u
+B u
+Y l
+Y d
+30876
+0:06.35
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/11.rr========
+4
+Y l
+G u
+R l
+R u
+28892
+0:00.85
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/12.rr========
+15
+B l
+R u
+R l
+R d
+B d
+R l
+Y l
+R d
+Y d
+Y l
+Y u
+Y l
+G u
+G r
+Y u
+30072
+0:03.58
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/13.rr========
+5
+R l
+R u
+B d
+R l
+R u
+28068
+0:00.16
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/14.rr========
+6
+B l
+Y u
+Y l
+R d
+B d
+R l
+28152
+0:00.17
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/15.rr========
+9
+Y r
+R d
+R r
+R d
+R r
+Y l
+Y d
+R d
+Y r
+28092
+0:00.17
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/16.rr========
+5
+G u
+R u
+R l
+G l
+Y u
+28240
+0:00.63
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/17.rr========
+5
+B u
+B r
+Y r
+Y d
+Y r
+28648
+0:00.57
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/18.rr========
+8
+R d
+Y r
+G d
+G l
+G u
+B d
+B l
+G d
+31648
+0:11.89
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/19.rr========
+Command exited with non-zero status 124
+34452
+0:30.00
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/2.rr========
+3
+G r
+B l
+R r
+28132
+0:00.15
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/20.rr========
+7
+Y d
+B r
+B d
+G r
+G u
+G r
+G d
+28268
+0:00.20
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/3.rr========
+Command exited with non-zero status 124
+35584
+0:30.00
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/4.rr========
+9
+B d
+R l
+R d
+B r
+B u
+Y r
+B r
+B d
+B r
+28164
+0:00.33
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/5.rr========
+12
+R r
+G u
+B d
+B r
+R u
+Y r
+Y d
+Y r
+R l
+B l
+B d
+B r
+33216
+0:22.43
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/6.rr========
+5
+G d
+R l
+B u
+Y l
+Y d
+28632
+0:00.74
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/7.rr========
+5
+B u
+Y l
+R r
+R d
+R l
+28404
+0:00.34
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/8.rr========
+4
+R u
+Y u
+G u
+G l
+28156
+0:00.16
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/9.rr========
+3
+G d
+B r
+Y d
+28052
+0:00.14
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/1.rr========
+8
+B l
+Y u
+G l
+R l
+R u
+Y l
+Y d
+R l
+28252
+0:00.17
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/10.rr========
+1
+R r
+28044
+0:00.14
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/11.rr========
+3
+G r
+G d
+G r
+28232
+0:00.16
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/12.rr========
+7
+G u
+B u
+G l
+R d
+R r
+R d
+R r
+28124
+0:00.26
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/13.rr========
+11
+R d
+R l
+G u
+G l
+B u
+B l
+Y l
+Y u
+Y l
+Y u
+Y r
+28396
+0:00.47
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/14.rr========
+9
+R u
+R l
+G l
+G d
+R r
+R d
+R l
+Y d
+R d
+28364
+0:00.29
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/15.rr========
+7
+Y l
+R u
+R l
+R u
+R r
+G d
+G r
+28448
+0:00.92
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/16.rr========
+7
+R l
+Y d
+B u
+G l
+B l
+Y l
+B d
+28552
+0:00.44
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/17.rr========
+10
+B u
+Y u
+Y l
+R d
+Y r
+Y d
+Y l
+Y u
+Y l
+Y u
+28872
+0:00.97
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/18.rr========
+5
+R r
+B d
+B l
+G d
+G r
+28180
+0:00.16
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/19.rr========
+4
+G d
+B l
+R d
+R r
+28200
+0:00.15
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/2.rr========
+8
+Y l
+R r
+G u
+B l
+B u
+G l
+G u
+R l
+28292
+0:00.43
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/20.rr========
+7
+B r
+B u
+R u
+B r
+B d
+R l
+R d
+30180
+0:03.83
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/3.rr========
+8
+R u
+G l
+G u
+B d
+B l
+B d
+B l
+B u
+28532
+0:00.97
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/4.rr========
+8
+G d
+B u
+B l
+Y l
+Y u
+R d
+Y r
+Y d
+29036
+0:01.04
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/5.rr========
+13
+B r
+B d
+R d
+Y r
+Y d
+Y r
+R u
+B r
+R d
+R l
+R d
+R l
+R u
+28520
+0:00.37
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/6.rr========
+13
+G l
+Y d
+Y l
+B r
+B u
+Y u
+R d
+R l
+B l
+Y r
+Y u
+Y l
+Y u
+29312
+0:01.49
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/7.rr========
+7
+G d
+G l
+R d
+G r
+G u
+R l
+R u
+28172
+0:00.18
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/8.rr========
+10
+B d
+G d
+R r
+Y u
+R l
+G r
+R d
+B l
+B u
+B r
+28288
+0:00.28
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/9.rr========
+7
+Y u
+B l
+B d
+Y d
+Y r
+Y d
+Y l
+28260
+0:00.21
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/1.rr========
+6
+R d
+Y r
+Y u
+Y l
+Y d
+Y l
+28552
+0:00.63
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/10.rr========
+1
+R u
+27952
+0:00.15
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/11.rr========
+4
+G d
+B u
+R r
+R d
+28380
+0:00.17
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/12.rr========
+6
+B l
+B d
+Y r
+Y d
+G l
+G d
+28200
+0:00.16
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/13.rr========
+8
+R l
+G r
+R u
+R r
+Y l
+Y d
+Y l
+B d
+32048
+0:13.72
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/14.rr========
+7
+Y r
+B r
+R l
+R u
+R r
+Y u
+G r
+28196
+0:00.24
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/15.rr========
+3
+G u
+R u
+G l
+28540
+0:00.24
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/16.rr========
+3
+B r
+G l
+G u
+28180
+0:00.15
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/17.rr========
+10
+Y r
+Y d
+B r
+R l
+R d
+R l
+R d
+R l
+R u
+R r
+29736
+0:02.30
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/18.rr========
+5
+Y u
+G l
+G d
+G r
+G u
+29076
+0:01.11
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/19.rr========
+7
+G d
+R l
+R u
+Y u
+Y r
+B r
+B d
+28164
+0:00.16
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/2.rr========
+10
+R l
+B r
+B u
+G d
+G r
+B d
+B l
+B d
+B r
+B d
+30052
+0:04.88
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/20.rr========
+6
+R r
+R u
+B r
+G u
+G r
+B d
+28296
+0:00.32
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/3.rr========
+10
+B l
+G l
+R r
+G d
+R l
+R u
+G r
+G d
+Y l
+G u
+28648
+0:00.84
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/4.rr========
+Command exited with non-zero status 124
+35444
+0:30.00
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/5.rr========
+6
+B u
+Y r
+Y d
+B r
+B d
+R r
+31408
+0:09.82
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/6.rr========
+11
+Y l
+R d
+R l
+B u
+G r
+G d
+G r
+B l
+B d
+B r
+B u
+28152
+0:00.24
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/7.rr========
+7
+B u
+Y u
+Y r
+Y u
+G r
+Y d
+Y l
+28612
+0:00.80
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/8.rr========
+6
+R d
+B l
+G r
+G u
+G l
+G d
+28496
+0:00.17
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/9.rr========
+Command exited with non-zero status 124
+35244
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/1.rr========
+Command exited with non-zero status 124
+35136
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/10.rr========
+Command exited with non-zero status 124
+34424
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/11.rr========
+Command exited with non-zero status 124
+34092
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/12.rr========
+2
+B r
+B d
+27992
+0:00.15
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/13.rr========
+Command exited with non-zero status 124
+35040
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/14.rr========
+7
+R l
+B u
+B r
+Y d
+Y l
+Y u
+Y r
+28520
+0:00.17
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/15.rr========
+7
+B r
+B u
+G r
+B d
+B r
+B d
+B l
+28636
+0:00.52
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/16.rr========
+21
+G r
+R d
+R r
+R d
+B r
+B d
+B r
+B u
+G l
+G u
+G l
+B r
+Y l
+Y d
+Y r
+Y d
+G d
+Y r
+Y u
+G l
+G u
+31704
+0:09.32
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/17.rr========
+7
+B l
+B d
+G l
+G d
+Y r
+R d
+G r
+29064
+0:01.11
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/18.rr========
+12
+R r
+R u
+Y l
+R d
+R r
+B u
+B l
+B d
+B l
+B u
+B r
+B d
+28140
+0:00.30
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/19.rr========
+Command exited with non-zero status 124
+35256
+0:30.00
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/2.rr========
+6
+G l
+B l
+B u
+G r
+G u
+G r
+28260
+0:00.20
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/20.rr========
+3
+Y r
+G r
+G u
+28084
+0:00.16
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/3.rr========
+1
+G r
+27892
+0:00.14
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/4.rr========
+6
+Y r
+B l
+G d
+G r
+B r
+B d
+28340
+0:00.19
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/5.rr========
+7
+R d
+B r
+R l
+Y u
+R r
+Y d
+Y r
+29012
+0:01.34
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/6.rr========
+16
+Y r
+R d
+R r
+Y u
+R l
+R u
+R l
+G l
+G u
+Y d
+G r
+G u
+G r
+Y u
+G l
+G u
+28352
+0:00.18
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/7.rr========
+10
+B d
+R r
+G r
+G d
+G l
+R d
+R l
+B l
+G d
+R r
+32708
+0:15.08
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/8.rr========
+12
+G r
+B r
+R d
+R r
+B l
+B u
+B r
+Y l
+Y u
+Y r
+Y u
+Y l
+30460
+0:04.43
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/9.rr========
+10
+G d
+B l
+B d
+R l
+G r
+R d
+Y l
+B r
+Y d
+Y l
+28288
+0:00.19
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/1.rr========
+10
+Y u
+B u
+G r
+B r
+R l
+R u
+B d
+R r
+R d
+Y r
+28120
+0:00.16
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/10.rr========
+4
+B l
+Y r
+R u
+R l
+28308
+0:00.15
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/11.rr========
+Command exited with non-zero status 124
+34656
+0:30.00
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/12.rr========
+Command exited with non-zero status 124
+34808
+0:30.00
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/13.rr========
+11
+Y d
+G u
+Y r
+B r
+B d
+B r
+B u
+Y d
+Y r
+B d
+B l
+34632
+0:28.36
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/14.rr========
+21
+B u
+B l
+R l
+G l
+G u
+R r
+R d
+G l
+G d
+R l
+G l
+R d
+R l
+R d
+G r
+R u
+G l
+R d
+R r
+G d
+R l
+33916
+0:16.34
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/15.rr========
+7
+G u
+G l
+R u
+B r
+Y l
+B u
+B r
+28552
+0:00.25
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/16.rr========
+Command exited with non-zero status 124
+34540
+0:30.00
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/17.rr========
+13
+R r
+G u
+G l
+G u
+G l
+G u
+B l
+B u
+G r
+G d
+B d
+B r
+B u
+30780
+0:06.52
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/18.rr========
+11
+R r
+R u
+Y r
+Y u
+Y r
+B u
+Y l
+Y d
+G l
+Y u
+Y r
+28560
+0:00.35
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/19.rr========
+7
+R r
+R d
+B u
+B l
+B u
+B r
+B d
+28508
+0:00.56
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/2.rr========
+9
+B l
+Y d
+Y l
+R d
+R l
+R u
+R l
+G u
+G r
+31916
+0:10.25
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/20.rr========
+2
+G u
+G l
+28276
+0:00.17
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/3.rr========
+4
+Y l
+Y u
+B l
+B u
+28204
+0:00.15
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/4.rr========
+21
+B l
+B d
+B r
+Y d
+Y r
+Y u
+Y l
+G l
+G d
+R r
+R u
+Y d
+R l
+G u
+G r
+G d
+G l
+G u
+G l
+G u
+G r
+30140
+0:02.81
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/5.rr========
+7
+G r
+B r
+B d
+B l
+B u
+B r
+B d
+28352
+0:00.54
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/6.rr========
+14
+Y r
+Y u
+Y r
+R d
+R r
+R u
+G u
+G l
+R l
+G u
+G r
+G d
+R r
+G u
+33144
+0:19.03
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/7.rr========
+12
+G l
+G u
+B u
+B l
+R l
+Y u
+Y l
+R d
+R l
+R d
+R r
+R d
+28088
+0:00.34
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/8.rr========
+Command exited with non-zero status 124
+34812
+0:30.00
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/9.rr========
+4
+B u
+G u
+G l
+G u
+28144
+0:00.19
+passed 109 in 240
