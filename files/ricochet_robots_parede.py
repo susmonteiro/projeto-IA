@@ -11,13 +11,12 @@ from search import Problem, Node, astar_search, breadth_first_tree_search, \
 import sys
 
 #DEBUG
-from time import sleep
 from copy import deepcopy
 from math import sqrt
 
 # GLOBAL VARS
-INF = 999
-WEIGHT = 2
+INF = 0
+WEIGHT = 0
 sortedRobots = []
 wallsH = []
 wallsV = []
@@ -43,13 +42,11 @@ class RRState:
         return self.id < other.id
 
     def __eq__(self, other):
-        # print("Inside EQ")
-        # if not self.board ==  other.board:
-        #     print("not eqs")
         return isinstance(other, RRState) and self.board == other.board
     
     def __hash__(self):
         return hash(self.board)
+
 
 class Board:
     """ Representacao interna de um tabuleiro de Ricochet Robots. """
@@ -64,46 +61,23 @@ class Board:
         self.targetColor = target[0]
         self.targetPos = (eval(target[1])-1, eval(target[2])-1)  
 
-        ###
-        # self.symmetricAction = tuple()
-
     def __eq__(self, other):
         return isinstance(other, Board) and self.robots == other.robots
     
     def __hash__(self):
         return hash(tuple(self.robots.items()))
     
-    
-    # def set_lastAction(self, tpl: tuple):
-    #     self.symmetricAction = (tpl[0], self.symmetricMove(tpl[1]))
-
-    # def symmetricMove(self, move: str):
-    #     if move == RIGHT:
-    #         return LEFT
-    #     if move == LEFT:
-    #         return RIGHT
-    #     if move == UP:
-    #         return DOWN
-    #     if move == DOWN:
-    #         return UP
-        
-    # def check_notSymmetricAction(self, action: tuple):
-    #     return not(action == self.symmetricAction)
 
     def robot_position(self, robot: str):
         """ Devolve a posição atual do robô passado como argumento. """
         return tuple(map(lambda x: x+1, self.robots[robot]))
 
     def set_robot_position(self, robot: str, pos: tuple):
-        # print("inside set robot pos", robot)
-        # print(pos)
         self.robots[robot] = pos
 
     
     def isPosEmpty(self, pos_i, pos_j):
         for robot in self.robots:
-            # print(robot)
-            # print(self.robots[robot])
             if pos_i == self.robots[robot][0] and pos_j == self.robots[robot][1]:
                 return False
         return True
@@ -113,9 +87,6 @@ class Board:
         mov = action[1]
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
-        # print("can move:", pos_i, pos_j)
-
-        #TODO check if symmetric to the lastAction
         
         if mov == RIGHT:
             return not(wallsV[pos_i][pos_j + 1]) \
@@ -133,7 +104,7 @@ class Board:
     def findNextStop(self, robot: str, mov: str):
         pos_i = self.robots[robot][0]
         pos_j = self.robots[robot][1]
-        # print("find next wall:", pos_i, pos_j)
+
 
         if mov == RIGHT:
             for j in range(pos_j + 1, self.size + 1):
@@ -149,7 +120,6 @@ class Board:
                     return (i, pos_j)
         if mov == DOWN:
             for i in range(pos_i + 1, self.size + 1):
-                # print("Walls check pos:", i, pos_j)
                 if wallsH[i][pos_j] or not(self.isPosEmpty(i, pos_j)):
                     return (i-1, pos_j)
             
@@ -158,9 +128,7 @@ class Board:
         print("robots " + str(self.robots), "target "+ str(self.targetColor) + " " + str(self.targetPos),\
             "Walls H:" + str(wallsH), "walls V" + str(wallsV), sep='\n')
     
-    def checkGoal(self):
-        # print("targetPos", self.targetPos)        
-        # print("robot", self.robots[self.targetColor])        
+    def checkGoal(self):      
         return self.targetPos == self.robots[self.targetColor]    
 
     """ def distanceFromTarget(self):
@@ -174,7 +142,6 @@ class Board:
             totalGravity += gravity[i][j]            
         return WEIGHT*totalGravity
 
-    # TODO: outros metodos da classe
 
 
 
@@ -182,7 +149,6 @@ class RicochetRobots(Problem):
     def __init__(self, board: Board):
         """ O construtor especifica o estado inicial. """
         self.initial = RRState(board)
-        # TODO: self.initial = ...
         pass
 
     def actions(self, state: RRState):
@@ -192,10 +158,9 @@ class RicochetRobots(Problem):
         movements = [RIGHT, LEFT, UP, DOWN]
 
         for robot in sortedRobots:
-            # print("robot:", state.board.robot_position(robot))
+            
             for move in movements:
                 action = (robot, move)
-                # if state.board.check_notSymmetricAction(action) and state.board.canMove(action):
                 if state.board.canMove(action):
                     actions.append(action)
         return actions
@@ -205,27 +170,16 @@ class RicochetRobots(Problem):
         'state' passado como argumento. A ação retornada deve ser uma
         das presentes na lista obtida pela execução de
         self.actions(state). """
-        # print("Current Position: ", state.board.robots[action[0]])
-        #print("actions:", self.actions(state))
-        # print("Last action:", state.board.symmetricAction)
-        # print("++++")
-        # sleep(0.5)
         newBoard = deepcopy(state.board)
         newState = RRState(newBoard)
         pos = newState.board.findNextStop(action[0], action[1])
         newState.board.set_robot_position(action[0], pos)
-        # newState.board.set_lastAction(action)
         return newState
-        # pos = state.board.findNextWall(action[0], action[1])
-        # state.board.set_robot_position(action[0], pos)
-        # # state.board.printBoard()
-        # return state
 
     def goal_test(self, state: RRState):
         """ Retorna True se e só se o estado passado como argumento é
         um estado objetivo. Deve verificar se o alvo e o robô da
         mesma cor ocupam a mesma célula no tabuleiro. """
-        # print("Check for goal")
         return state.board.checkGoal()
         
     def h(self, node: Node):
@@ -280,6 +234,7 @@ def parse_instance(filename: str) -> Board:
 
     INF = size
     WEIGHT = sqrt(size)
+
     sortRobots(robots, target)
     genGravity(size, target)
     return Board(size, robots, target)
@@ -371,13 +326,3 @@ if __name__ == "__main__":
     board = parse_instance(sys.argv[1])
     res = astar_search(RicochetRobots(board))
     printSolve(res)
-
-    ###
-    # if len(node.solution()) > 2 and (node.solution()[0] == ('B', 'l')) and (node.solution()[1] == ('Y', 'u')) and (node.solution()[2] == ('R', 'r')):
-    #     print()
-    #     print(node.solution())
-    #     print()
-    #     print(problem.goal_test(node.state))
-    #     print(node.state.board.robot_position('R'))
-    #     sleep(0.1)
-    ###
