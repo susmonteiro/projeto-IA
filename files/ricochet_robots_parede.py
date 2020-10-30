@@ -13,9 +13,11 @@ import sys
 #DEBUG
 from time import sleep
 from copy import deepcopy
+from math import sqrt
 
 # GLOBAL VARS
-INFINITO = 999
+INF = 999
+WEIGHT = 2
 sortedRobots = []
 wallsH = []
 wallsV = []
@@ -33,6 +35,7 @@ class RRState:
         self.board = board
         self.id = RRState.state_id
         RRState.state_id += 1
+
 
     def __lt__(self, other):
         """ Este método é utilizado em caso de empate na gestão da lista
@@ -169,7 +172,7 @@ class Board:
         totalGravity = 0
         for (i, j) in self.robots.values():
             totalGravity += gravity[i][j]            
-        return totalGravity
+        return WEIGHT*totalGravity
 
     # TODO: outros metodos da classe
 
@@ -241,6 +244,8 @@ def parse_instance(filename: str) -> Board:
     # TODO
     global wallsV
     global wallsH
+    global WEIGHT
+    global INF
     file = open(filename, 'r')
     size = eval(file.readline())      # Read Board size from file  
     robots = []
@@ -272,46 +277,77 @@ def parse_instance(filename: str) -> Board:
             wallsH[i][j] = 1
         elif (p == DOWN):
             wallsH[i+1][j] = 1
-            
+
+    INF = size
+    WEIGHT = sqrt(size)
     sortRobots(robots, target)
-    genGravity(target, size)
+    genGravity(size, target)
     return Board(size, robots, target)
 
+def propagateGravity(gravity, size):
+    global vari
+    global varj
+    varj = 1
+    vari = 1
+    _propagateGravity(gravity, 0, 0, size)
 
-def genGravity(target, size):
+    varj = -1
+    _propagateGravity(gravity, 0, size-1, size)
+
+    vari = -1
+    _propagateGravity(gravity, size-1, size-1, size)
+
+    varj = 1
+    _propagateGravity(gravity, size-1, 0, size)
+
+def _propagateGravity(gravity, i, j, size):  
+    if (i >= size or j >= size or i < 0 or j < 0):
+        return INF + 1
+
+    elif (gravity[i][j] < INF):
+        return gravity[i][j]
+
+    else:
+        if wallsH[i+max(vari, 0)][j]:
+            if wallsV[i][j+max(varj, 0)]:
+                return gravity[i][j]
+            else:
+                gravity[i][j] = _propagateGravity(gravity, i, j+varj, size) + 1
+        elif wallsV[i][j+max(varj, 0)]:
+            gravity[i][j] = _propagateGravity(gravity, i+vari, j, size) + 1
+        else:
+            gravity[i][j] = min(_propagateGravity(gravity, i+vari, j, size), _propagateGravity(gravity, i, j+varj, size)) + 1
+        return gravity[i][j]
+
+
+def genGravity(size, target):
+    pos = (eval(target[1]) -1, eval(target[2])-1)    
     global gravity
-    gravity = [[INFINITO for _ in range(size)] for _ in range(size)]
-    (i, j) = (eval(target[1])-1, eval(target[2])-1)
-    gravity[i][j] = 0
-    val=0
-    for k in range(0, size):
-        val += 1
-        _genGravity(i+k, j+k, val, size)
-        _genGravity(i+k, j-k, val, size)
-        _genGravity(i-k, j+k, val, size)
-        _genGravity(i-k, j-k, val, size)
+    gravity = [[INF for _ in range(size)] for _ in range(size)] 
+
+    for i in range(pos[0]-1, -1, -1):
+        if wallsH[i+1][pos[1]]:
+            break
+        gravity[i][pos[1]] = 1
     
-def _genGravity(i, j, val, size):
-    #safety check
-    if i < 0 or j < 0 or i >= size or j >= size:
-        return
-    global gravity
-    #up
-    for k in range(i, -1, -1):
-        if gravity[k][j] == INFINITO:
-            gravity[k][j] = val
-    #down
-    for k in range(i, size):
-        if gravity[k][j] == INFINITO:
-            gravity[k][j] = val
-    #left
-    for k in range(j, -1, -1):
-        if gravity[i][k] == INFINITO:
-            gravity[i][k] = val
-    # right
-    for k in range(j, size):
-        if gravity[i][k] == INFINITO:
-            gravity[i][k] = val
+    for i in range(pos[0]+1, size):
+        if wallsH[i][pos[1]]:
+            break
+        gravity[i][pos[1]] = 1
+
+    for j in range(pos[1]-1, -1, -1):
+        if wallsV[pos[0]][j+1]:
+            break
+        gravity[pos[0]][j] = 1
+
+    for j in range(pos[1]+1, size):
+        if wallsV[pos[0]][j]:
+            break
+        gravity[pos[0]][j] = 1
+
+    gravity[pos[0]][pos[1]] = 0
+
+    propagateGravity(gravity, size) 
 
 
 

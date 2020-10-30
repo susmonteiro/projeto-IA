@@ -13,9 +13,11 @@ import sys
 #DEBUG
 from time import sleep
 from copy import deepcopy
+from math import sqrt
 
 # GLOBAL VARS
 INFINITO = 999
+WEIGHT = 2
 sortedRobots = []
 wallsH = []
 wallsV = []
@@ -33,6 +35,7 @@ class RRState:
         self.board = board
         self.id = RRState.state_id
         RRState.state_id += 1
+
 
     def __lt__(self, other):
         """ Este método é utilizado em caso de empate na gestão da lista
@@ -169,7 +172,7 @@ class Board:
         totalGravity = 0
         for (i, j) in self.robots.values():
             totalGravity += gravity[i][j]            
-        return totalGravity
+        return WEIGHT*totalGravity
 
     # TODO: outros metodos da classe
 
@@ -241,6 +244,7 @@ def parse_instance(filename: str) -> Board:
     # TODO
     global wallsV
     global wallsH
+    global WEIGHT
     file = open(filename, 'r')
     size = eval(file.readline())      # Read Board size from file  
     robots = []
@@ -272,7 +276,8 @@ def parse_instance(filename: str) -> Board:
             wallsH[i][j] = 1
         elif (p == DOWN):
             wallsH[i+1][j] = 1
-            
+    
+    WEIGHT = sqrt(size)
     sortRobots(robots, target)
     genGravity(target, size)
     return Board(size, robots, target)
