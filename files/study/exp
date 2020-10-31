@@ -1,0 +1,3649 @@
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/1.rr========
+17
+R r
+B u
+R d
+Y r
+G d
+G r
+R r
+R d
+B d
+B r
+B u
+B r
+B u
+B r
+B d
+B r
+B u
+passed 1 in 1
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/10.rr========
+28
+G d
+B l
+B u
+R d
+R l
+R u
+B r
+Y d
+Y r
+Y d
+Y r
+R r
+B l
+B d
+R l
+B u
+Y d
+B r
+B d
+G l
+B u
+G d
+Y u
+G l
+G u
+Y d
+B d
+G r
+passed 2 in 2
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/11.rr========
+15
+R u
+R l
+G r
+Y r
+G u
+R u
+B l
+B d
+G d
+B l
+Y d
+B u
+B r
+Y r
+B d
+passed 3 in 3
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/12.rr========
+passed 3 in 4
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/13.rr========
+6
+B d
+Y d
+G r
+B d
+B l
+G l
+passed 4 in 5
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/14.rr========
+15
+B r
+Y r
+G r
+G u
+R u
+B u
+Y r
+G l
+G d
+Y d
+G r
+G u
+B d
+G r
+G u
+passed 5 in 6
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/15.rr========
+16
+G u
+Y u
+B u
+R u
+G r
+Y u
+Y r
+Y u
+Y l
+G u
+B r
+B u
+Y d
+R r
+G l
+Y u
+passed 6 in 7
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/16.rr========
+21
+G r
+G u
+G l
+G u
+R u
+R l
+G l
+Y l
+Y u
+G r
+B d
+R d
+B r
+R d
+R r
+G u
+G l
+G d
+B r
+R r
+G r
+passed 7 in 8
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/17.rr========
+19
+Y d
+Y l
+G u
+R l
+R u
+R r
+B l
+B u
+B r
+B u
+Y u
+G r
+Y d
+B d
+R d
+G u
+G r
+R r
+G d
+passed 8 in 9
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/18.rr========
+32
+R l
+G d
+G l
+B l
+B d
+B l
+Y u
+Y l
+R d
+R l
+G l
+B l
+R u
+Y u
+R l
+R d
+Y d
+G d
+G l
+B l
+G u
+G l
+Y r
+G d
+G r
+B d
+G l
+B l
+B u
+B l
+G r
+B d
+passed 9 in 10
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/19.rr========
+16
+Y l
+R l
+B l
+B d
+G r
+G d
+G l
+G u
+Y d
+G l
+Y u
+Y r
+Y u
+R u
+R r
+G r
+passed 10 in 11
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/2.rr========
+3
+R u
+Y l
+Y u
+passed 11 in 12
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/20.rr========
+13
+Y u
+Y l
+Y u
+R l
+R u
+R l
+R u
+Y r
+R r
+R d
+Y l
+R u
+Y r
+passed 12 in 13
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/3.rr========
+3
+Y r
+Y u
+Y l
+passed 13 in 14
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/4.rr========
+20
+Y d
+B r
+G l
+Y r
+R r
+Y r
+G d
+G l
+R d
+Y d
+R l
+Y u
+B u
+G u
+Y l
+R d
+R l
+G d
+Y r
+R u
+passed 14 in 15
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/5.rr========
+11
+G r
+G d
+R u
+R r
+B r
+Y u
+G r
+R d
+Y r
+R u
+G l
+passed 15 in 16
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/6.rr========
+passed 15 in 17
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/7.rr========
+16
+R r
+R u
+B r
+G r
+G d
+B l
+B u
+B r
+B u
+B l
+R l
+R u
+R l
+R u
+R r
+R u
+passed 16 in 18
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/8.rr========
+6
+Y l
+R u
+R l
+B u
+G u
+Y u
+passed 17 in 19
+======testes/more-rr-tests/10x10/testes/more-rr-tests/10x10/9.rr========
+7
+Y l
+G u
+G r
+Y u
+Y l
+G u
+Y u
+passed 18 in 20
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/1.rr========
+17
+G l
+G d
+G l
+R l
+R d
+R l
+Y l
+Y d
+B u
+B l
+B u
+Y l
+G d
+R l
+G u
+G r
+G d
+passed 19 in 21
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/10.rr========
+31
+R l
+G d
+Y r
+B r
+R d
+G r
+R l
+R d
+R r
+R u
+G u
+G r
+G d
+G r
+G d
+G l
+G d
+G r
+G d
+G r
+G u
+G l
+G d
+G l
+Y l
+Y u
+Y l
+Y d
+Y r
+R r
+Y u
+passed 20 in 22
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/11.rr========
+12
+G d
+B u
+G r
+G u
+G l
+B d
+B l
+B u
+B l
+B u
+B l
+B u
+passed 21 in 23
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/12.rr========
+passed 21 in 24
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/13.rr========
+5
+Y d
+R l
+R d
+R r
+R d
+passed 22 in 25
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/14.rr========
+15
+G r
+R u
+B l
+G d
+G l
+G u
+Y d
+G r
+Y l
+Y u
+Y r
+Y d
+Y l
+Y u
+Y r
+passed 23 in 26
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/15.rr========
+32
+Y d
+G r
+Y r
+R d
+R l
+R u
+G l
+G u
+G r
+G u
+G r
+B l
+B u
+B r
+B u
+B r
+G d
+B r
+G u
+Y d
+Y l
+Y u
+Y r
+Y u
+Y r
+G d
+B d
+Y r
+R r
+R d
+R l
+R d
+passed 24 in 27
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/16.rr========
+17
+R d
+B d
+B l
+B d
+R l
+R d
+R r
+Y l
+Y d
+Y r
+R u
+Y u
+R l
+R d
+R r
+Y u
+R u
+passed 25 in 28
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/17.rr========
+7
+B l
+Y l
+Y u
+G l
+Y r
+G u
+G r
+passed 26 in 29
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/18.rr========
+5
+G l
+B u
+B l
+Y l
+Y u
+passed 27 in 30
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/19.rr========
+passed 27 in 31
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/2.rr========
+18
+G d
+R r
+B r
+G r
+G u
+R u
+G r
+R d
+R l
+G l
+B u
+Y r
+R r
+Y u
+R l
+Y l
+B d
+G r
+passed 28 in 32
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/20.rr========
+passed 28 in 33
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/3.rr========
+20
+R d
+G u
+B u
+G r
+G u
+B r
+R r
+R u
+R l
+G l
+B u
+Y d
+B l
+Y u
+Y l
+R u
+Y u
+B r
+G r
+Y r
+passed 29 in 34
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/4.rr========
+29
+B r
+Y r
+Y u
+G r
+G u
+B d
+B r
+R l
+R d
+R r
+Y r
+Y u
+Y l
+R l
+R u
+R r
+R d
+B d
+R r
+B u
+B r
+R d
+B l
+R u
+B u
+R u
+R r
+G r
+R u
+passed 30 in 35
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/5.rr========
+12
+R d
+Y d
+B r
+B d
+G d
+Y d
+G r
+G u
+Y r
+G l
+Y u
+G r
+passed 31 in 36
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/6.rr========
+12
+B l
+R d
+R l
+R d
+R r
+R d
+R r
+Y u
+Y r
+Y d
+Y l
+R l
+passed 32 in 37
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/7.rr========
+4
+B d
+B r
+B d
+G d
+passed 33 in 38
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/8.rr========
+4
+G r
+Y r
+Y u
+B d
+passed 34 in 39
+======testes/more-rr-tests/11x11/testes/more-rr-tests/11x11/9.rr========
+32
+R d
+R r
+Y r
+G r
+G u
+G r
+B u
+B r
+B d
+B r
+B u
+B r
+B d
+Y l
+Y d
+Y r
+Y u
+Y r
+Y d
+Y r
+Y u
+Y r
+Y d
+Y l
+B u
+Y r
+B d
+Y d
+B d
+B l
+B d
+B r
+passed 35 in 40
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/1.rr========
+24
+G r
+G u
+Y d
+R l
+R d
+R r
+R u
+R r
+B r
+B d
+B l
+G d
+G r
+G d
+G r
+G d
+G r
+R l
+G u
+R r
+G r
+G d
+G l
+B d
+passed 36 in 41
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/10.rr========
+27
+R r
+B d
+G d
+B r
+G r
+G d
+G l
+G d
+Y d
+Y l
+Y u
+Y r
+B u
+B r
+B d
+B l
+B d
+G l
+B d
+G r
+Y d
+G l
+B l
+Y r
+Y d
+B d
+Y l
+passed 37 in 42
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/11.rr========
+25
+R u
+Y l
+B u
+B r
+B u
+Y u
+R l
+R d
+R r
+R u
+B l
+R u
+B r
+Y d
+Y r
+Y u
+Y r
+R d
+R r
+Y u
+R l
+B l
+Y l
+R u
+Y r
+passed 38 in 43
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/12.rr========
+23
+G u
+B u
+R u
+Y r
+Y u
+R l
+B r
+B d
+G l
+G d
+G r
+R u
+R r
+G u
+G r
+B l
+Y d
+G d
+Y r
+Y u
+Y r
+G r
+Y d
+passed 39 in 44
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/13.rr========
+32
+R r
+R d
+B d
+B l
+B u
+G r
+G d
+G l
+G d
+G l
+G d
+R r
+G r
+Y l
+Y u
+Y r
+Y d
+Y r
+Y d
+Y r
+Y u
+Y l
+Y d
+B d
+B r
+B u
+B l
+B d
+Y l
+G l
+B d
+B r
+passed 40 in 45
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/14.rr========
+11
+B u
+G u
+B l
+B u
+Y u
+Y l
+Y d
+Y l
+Y u
+Y r
+G r
+passed 41 in 46
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/15.rr========
+21
+R u
+Y l
+G d
+G l
+G d
+G l
+G u
+Y r
+Y u
+Y r
+Y d
+Y r
+Y d
+Y l
+Y d
+Y l
+Y u
+G r
+Y u
+Y l
+G l
+passed 42 in 47
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/16.rr========
+7
+G r
+B d
+Y r
+B r
+R u
+R r
+R u
+passed 43 in 48
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/17.rr========
+17
+B l
+G u
+R l
+B u
+B l
+Y u
+Y l
+B d
+Y l
+R d
+B d
+Y d
+G r
+G u
+G l
+Y r
+G d
+passed 44 in 49
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/18.rr========
+19
+Y u
+B d
+G r
+R l
+R d
+Y l
+R u
+R l
+G u
+B r
+G d
+G r
+G u
+G r
+G d
+Y d
+G d
+R d
+G l
+passed 45 in 50
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/19.rr========
+10
+Y l
+G r
+R l
+R d
+R l
+R d
+R l
+R u
+R l
+R d
+passed 46 in 51
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/2.rr========
+12
+B l
+Y d
+B d
+Y l
+G d
+Y d
+R r
+B r
+B d
+Y r
+R u
+Y u
+passed 47 in 52
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/20.rr========
+3
+Y l
+B d
+Y d
+passed 48 in 53
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/3.rr========
+passed 48 in 54
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/4.rr========
+passed 48 in 55
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/5.rr========
+18
+R u
+B u
+Y l
+G d
+G l
+B l
+Y u
+Y l
+R l
+R d
+R l
+G l
+G d
+G l
+G d
+G r
+B r
+R d
+passed 49 in 56
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/6.rr========
+29
+B l
+Y d
+R l
+R u
+R r
+G r
+G d
+Y l
+Y d
+Y l
+Y u
+Y l
+Y d
+Y r
+G l
+Y d
+Y l
+Y d
+G r
+B u
+B l
+B u
+G d
+B r
+G u
+R u
+Y r
+Y u
+B r
+passed 50 in 57
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/7.rr========
+21
+Y d
+G r
+B d
+R d
+R r
+Y r
+Y d
+Y l
+G d
+G r
+G u
+G r
+G d
+G l
+R u
+R r
+R d
+R r
+R d
+Y u
+G l
+passed 51 in 58
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/8.rr========
+6
+Y d
+B r
+G d
+Y l
+Y d
+Y r
+passed 52 in 59
+======testes/more-rr-tests/12x12/testes/more-rr-tests/12x12/9.rr========
+passed 52 in 60
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/1.rr========
+passed 52 in 61
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/10.rr========
+passed 52 in 62
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/11.rr========
+2
+B u
+G r
+passed 53 in 63
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/12.rr========
+5
+Y u
+Y l
+G l
+R d
+R r
+passed 54 in 64
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/13.rr========
+passed 54 in 65
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/14.rr========
+passed 54 in 66
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/15.rr========
+passed 54 in 67
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/16.rr========
+passed 54 in 68
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/17.rr========
+passed 54 in 69
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/18.rr========
+22
+Y r
+R l
+G d
+G l
+R d
+G d
+R l
+B u
+B l
+B d
+G r
+R d
+B l
+G l
+G d
+Y l
+Y u
+G u
+B u
+R u
+G l
+Y l
+passed 55 in 70
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/19.rr========
+9
+G r
+Y d
+B d
+B r
+R r
+R d
+R r
+R d
+R r
+passed 56 in 71
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/2.rr========
+passed 56 in 72
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/20.rr========
+passed 56 in 73
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/3.rr========
+10
+G d
+Y d
+Y r
+Y d
+G l
+B u
+G u
+R l
+R u
+Y l
+passed 57 in 74
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/4.rr========
+passed 57 in 75
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/5.rr========
+21
+Y d
+B u
+R u
+R l
+G u
+B r
+B d
+R l
+R u
+R r
+G d
+B u
+B r
+Y u
+R r
+Y d
+Y l
+G u
+G r
+G d
+Y r
+passed 58 in 76
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/6.rr========
+26
+B u
+B l
+G l
+G u
+B d
+Y d
+Y l
+B u
+B l
+B u
+B l
+R u
+B r
+G u
+B d
+G r
+G u
+G r
+G d
+R r
+R u
+R r
+Y d
+B d
+B r
+G d
+passed 59 in 77
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/7.rr========
+6
+Y d
+G d
+G l
+G d
+G r
+G u
+passed 60 in 78
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/8.rr========
+28
+G d
+G r
+G d
+R d
+R r
+G l
+B d
+B l
+B d
+R l
+R d
+R r
+R d
+R r
+G d
+B l
+B d
+G r
+G u
+B l
+G l
+Y r
+R r
+R u
+B d
+Y l
+G u
+Y u
+passed 61 in 79
+======testes/more-rr-tests/13x13/testes/more-rr-tests/13x13/9.rr========
+passed 61 in 80
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/1.rr========
+8
+Y d
+B u
+R l
+G d
+Y l
+B l
+B d
+B r
+passed 62 in 81
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/10.rr========
+30
+B l
+B d
+R d
+B l
+G r
+G d
+R r
+R d
+R l
+G u
+R r
+G d
+G l
+G d
+R l
+Y u
+Y r
+Y u
+Y r
+Y d
+Y r
+Y d
+Y l
+Y d
+Y l
+Y d
+G r
+Y d
+B u
+Y l
+passed 63 in 82
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/11.rr========
+9
+B u
+R d
+G d
+R r
+B d
+B l
+R l
+R d
+B d
+passed 64 in 83
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/12.rr========
+passed 64 in 84
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/13.rr========
+44
+B l
+R d
+R r
+G u
+G r
+G u
+G r
+Y l
+Y d
+R d
+Y r
+R u
+R l
+G l
+G d
+G r
+G u
+G r
+G u
+B r
+B u
+G d
+B l
+G u
+G r
+B u
+G d
+B r
+G u
+G r
+G d
+G l
+B d
+B r
+B u
+B r
+B u
+B r
+Y d
+B r
+R r
+R d
+B d
+B l
+passed 65 in 85
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/14.rr========
+45
+Y d
+R l
+B r
+B u
+Y l
+Y d
+Y l
+Y d
+Y l
+R d
+R l
+R d
+R l
+R d
+R l
+R d
+R l
+R u
+G d
+G r
+G d
+G r
+G d
+G l
+B d
+B r
+G d
+G r
+G d
+G l
+G d
+G l
+B l
+B d
+B r
+B d
+B l
+B d
+G r
+G u
+G l
+G d
+G l
+R r
+G u
+passed 66 in 86
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/15.rr========
+20
+B l
+G u
+Y l
+Y d
+Y r
+Y d
+Y r
+Y d
+Y l
+G d
+B d
+B r
+B u
+G r
+G d
+G r
+G u
+B l
+G u
+G l
+passed 67 in 87
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/16.rr========
+passed 67 in 88
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/17.rr========
+passed 67 in 89
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/18.rr========
+passed 67 in 90
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/19.rr========
+27
+B l
+Y r
+R r
+R d
+R r
+G r
+G d
+G r
+Y u
+G u
+G r
+G u
+G r
+B d
+R d
+R r
+R u
+R l
+B l
+R u
+B r
+B u
+B r
+B d
+B r
+Y l
+B u
+passed 68 in 91
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/2.rr========
+7
+G r
+Y d
+Y r
+Y d
+Y l
+Y u
+Y l
+passed 69 in 92
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/20.rr========
+24
+R r
+B d
+R u
+B r
+Y r
+Y u
+Y r
+Y u
+G r
+G d
+G l
+G u
+G l
+G u
+Y d
+R r
+G u
+R u
+G r
+Y u
+R d
+R r
+Y l
+R u
+passed 70 in 93
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/3.rr========
+47
+R u
+B u
+Y u
+B l
+B u
+B l
+B u
+Y r
+Y u
+Y l
+Y u
+Y l
+Y u
+B l
+Y u
+B r
+G r
+G u
+G r
+G u
+G l
+G u
+G l
+G u
+B l
+Y l
+G u
+G l
+G d
+Y r
+B r
+G u
+B l
+B d
+Y l
+B u
+R r
+G l
+Y l
+R u
+R r
+Y r
+G r
+B u
+G l
+Y l
+R l
+passed 71 in 94
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/4.rr========
+31
+R l
+G r
+G d
+B r
+Y u
+Y r
+B u
+B r
+B d
+B r
+G l
+R d
+R r
+R d
+R r
+R u
+G r
+G d
+G r
+G u
+R l
+B d
+R r
+R d
+R r
+R u
+R r
+G d
+R l
+R u
+G u
+passed 72 in 95
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/5.rr========
+1
+Y d
+passed 73 in 96
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/6.rr========
+passed 73 in 97
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/7.rr========
+31
+B l
+R l
+B u
+B l
+B u
+B r
+Y r
+Y d
+Y l
+Y u
+G r
+G u
+G l
+G u
+Y r
+B d
+G r
+G d
+Y d
+Y l
+R u
+G u
+B u
+Y l
+R l
+R u
+B d
+G d
+R r
+G r
+R d
+passed 74 in 98
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/8.rr========
+passed 74 in 99
+======testes/more-rr-tests/14x14/testes/more-rr-tests/14x14/9.rr========
+31
+Y l
+G l
+B l
+G d
+G l
+R r
+B l
+B d
+Y d
+Y l
+Y d
+G u
+G l
+G d
+G l
+B l
+Y d
+B u
+B l
+B d
+Y l
+G u
+B l
+Y u
+Y l
+Y d
+B u
+Y l
+Y d
+B d
+G d
+passed 75 in 100
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/1.rr========
+35
+G r
+B d
+B l
+B d
+R r
+R d
+R r
+Y d
+Y r
+Y u
+R u
+R l
+R u
+B r
+B d
+B r
+Y l
+B u
+B l
+R d
+R r
+R d
+Y r
+R r
+B r
+B d
+B l
+B d
+Y d
+B r
+Y u
+R d
+R l
+Y r
+R u
+passed 76 in 101
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/10.rr========
+passed 76 in 102
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/11.rr========
+18
+G r
+Y u
+G d
+R r
+Y l
+Y u
+Y l
+G r
+R u
+R l
+G l
+G d
+G r
+G u
+G r
+R r
+G u
+R l
+passed 77 in 103
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/12.rr========
+28
+R d
+R r
+Y l
+Y d
+B u
+G l
+G u
+G r
+B l
+B d
+Y l
+Y d
+Y r
+G d
+Y r
+Y d
+G l
+G u
+R l
+G d
+Y u
+Y l
+G u
+G r
+R d
+R l
+R u
+G l
+passed 78 in 104
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/13.rr========
+12
+Y r
+G l
+B l
+B d
+B l
+B u
+R l
+R d
+R l
+B l
+R u
+B r
+passed 79 in 105
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/14.rr========
+35
+B l
+Y l
+R r
+R d
+G r
+G d
+Y d
+Y r
+Y d
+B r
+B d
+B l
+B d
+G l
+Y d
+G r
+Y u
+Y l
+Y d
+G u
+Y r
+Y d
+G d
+R r
+Y d
+R l
+R d
+B l
+R u
+B u
+B l
+B u
+R l
+B u
+B r
+passed 80 in 106
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/15.rr========
+4
+Y r
+Y d
+R r
+Y r
+passed 81 in 107
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/16.rr========
+30
+B d
+B r
+G r
+R d
+Y d
+Y r
+R r
+R u
+R r
+R d
+R r
+G d
+G l
+G u
+G r
+G d
+R l
+R u
+G r
+R r
+R d
+G l
+G u
+B l
+G d
+G r
+B u
+G l
+G d
+B d
+passed 82 in 108
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/17.rr========
+14
+B r
+G d
+Y r
+R r
+Y d
+R d
+R r
+R d
+R r
+B d
+B r
+R u
+B r
+R d
+passed 83 in 109
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/18.rr========
+13
+R d
+G d
+Y r
+Y d
+Y l
+R l
+R d
+R r
+Y d
+Y l
+R l
+R u
+Y r
+passed 84 in 110
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/19.rr========
+14
+Y u
+B u
+Y r
+G r
+R d
+G l
+Y l
+G d
+Y l
+B l
+Y d
+R r
+G r
+Y d
+passed 85 in 111
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/2.rr========
+21
+B l
+Y u
+G u
+B u
+Y r
+Y u
+B r
+B u
+B r
+Y r
+B u
+R l
+R u
+B r
+R u
+R r
+R u
+B l
+Y l
+R d
+Y r
+passed 86 in 112
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/20.rr========
+passed 86 in 113
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/3.rr========
+29
+B r
+R u
+R r
+R d
+G l
+G u
+G r
+B d
+R d
+G d
+Y l
+G u
+Y r
+G d
+Y d
+Y l
+Y d
+Y r
+Y d
+R r
+B u
+R l
+G u
+B u
+R l
+B d
+G d
+B r
+R u
+passed 87 in 114
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/4.rr========
+23
+Y r
+R l
+B l
+G r
+Y u
+B r
+B d
+B l
+B d
+B r
+B u
+B r
+R u
+R r
+R d
+R l
+R d
+R r
+R u
+R r
+B d
+R r
+B u
+passed 88 in 115
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/5.rr========
+passed 88 in 116
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/6.rr========
+29
+B u
+B l
+G r
+G u
+G l
+G d
+R d
+R l
+Y l
+Y d
+Y l
+Y u
+G u
+G l
+Y d
+G u
+G l
+G d
+R u
+R l
+R u
+Y u
+Y l
+R d
+Y u
+Y l
+G r
+Y d
+G l
+passed 89 in 117
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/7.rr========
+28
+B r
+R d
+R r
+G r
+G d
+G r
+Y u
+Y r
+Y d
+Y r
+B u
+B l
+B d
+B r
+R u
+R r
+G r
+G u
+Y r
+Y u
+R d
+G r
+B d
+G d
+B r
+B d
+Y r
+B u
+passed 90 in 118
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/8.rr========
+24
+B u
+Y u
+G l
+G u
+B l
+G l
+R u
+R l
+B d
+G l
+Y r
+Y u
+Y l
+G d
+Y l
+G u
+G l
+B u
+G r
+B d
+Y d
+G r
+Y u
+B u
+passed 91 in 119
+======testes/more-rr-tests/15x15/testes/more-rr-tests/15x15/9.rr========
+14
+G r
+G u
+R r
+G d
+Y r
+Y u
+Y r
+Y u
+Y l
+B d
+B l
+B d
+G r
+B r
+passed 92 in 120
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/1.rr========
+3
+R d
+Y d
+Y r
+passed 93 in 121
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/10.rr========
+8
+R l
+G l
+R u
+R l
+G u
+B d
+B l
+B u
+passed 94 in 122
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/11.rr========
+13
+B u
+R u
+Y u
+G l
+B r
+B u
+B r
+B u
+B l
+B d
+B l
+B u
+B r
+passed 95 in 123
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/12.rr========
+28
+G d
+R r
+G r
+G d
+B d
+B r
+B d
+B r
+B d
+B r
+B d
+B r
+R l
+R u
+R r
+R d
+Y d
+Y r
+Y u
+Y r
+Y u
+Y r
+Y d
+Y l
+Y d
+Y l
+Y d
+Y r
+passed 96 in 124
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/13.rr========
+10
+Y u
+G l
+G u
+B u
+B l
+Y l
+Y u
+R r
+Y d
+R l
+passed 97 in 125
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/14.rr========
+passed 97 in 126
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/15.rr========
+9
+B u
+R u
+R r
+G d
+G r
+Y d
+Y r
+Y u
+B r
+passed 98 in 127
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/16.rr========
+35
+G d
+G r
+R r
+B d
+Y d
+B r
+G l
+B d
+G r
+G d
+B l
+G u
+B r
+G d
+G l
+B d
+G r
+B r
+B d
+B l
+R d
+B r
+G l
+Y d
+Y r
+Y d
+G r
+G u
+R r
+G d
+G r
+G d
+G r
+B d
+G d
+passed 99 in 128
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/17.rr========
+passed 99 in 129
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/18.rr========
+passed 99 in 130
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/19.rr========
+18
+Y l
+G r
+Y u
+B d
+B r
+B d
+B r
+B d
+G l
+G u
+G r
+G u
+G r
+G u
+G l
+G d
+Y d
+G r
+passed 100 in 131
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/2.rr========
+passed 100 in 132
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/20.rr========
+32
+Y r
+R d
+R r
+R u
+B r
+B d
+B r
+R d
+R r
+R d
+R r
+R u
+R l
+R d
+R r
+B u
+R l
+R u
+R r
+R d
+B d
+B r
+B u
+B r
+B d
+Y u
+R r
+Y d
+Y r
+Y d
+Y r
+Y u
+passed 101 in 133
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/3.rr========
+passed 101 in 134
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/4.rr========
+12
+Y d
+B r
+Y r
+G d
+R l
+R d
+R l
+B u
+B l
+B d
+B r
+R r
+passed 102 in 135
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/5.rr========
+26
+G d
+G r
+R u
+B r
+Y d
+G d
+G r
+G u
+G r
+G u
+G l
+G u
+G r
+Y l
+G d
+Y d
+G l
+G d
+Y r
+Y u
+Y r
+Y d
+B l
+Y l
+G u
+G l
+passed 103 in 136
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/6.rr========
+11
+B u
+R d
+R r
+Y r
+Y d
+Y l
+Y d
+G l
+Y u
+Y r
+B r
+passed 104 in 137
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/7.rr========
+48
+R l
+B r
+B d
+Y l
+Y d
+Y l
+Y u
+Y l
+Y u
+Y r
+Y u
+Y l
+Y d
+Y r
+Y u
+G u
+G l
+G u
+G l
+G u
+G r
+G d
+G l
+R d
+G l
+G d
+R r
+G l
+G d
+G r
+G u
+G r
+G d
+G r
+R l
+R u
+B u
+B l
+B d
+B r
+B u
+B r
+B d
+B r
+G d
+B r
+Y r
+B u
+passed 105 in 138
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/8.rr========
+21
+B u
+B r
+Y d
+Y r
+R r
+R u
+G r
+G u
+G r
+G u
+G r
+G u
+B u
+B r
+B u
+B l
+B d
+B l
+B d
+B r
+B d
+passed 106 in 139
+======testes/more-rr-tests/16x16/testes/more-rr-tests/16x16/9.rr========
+9
+Y l
+B r
+B u
+Y r
+R r
+R d
+R l
+R d
+R l
+passed 107 in 140
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/1.rr========
+7
+R l
+R u
+G r
+Y r
+Y u
+R d
+Y l
+passed 108 in 141
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/10.rr========
+9
+G d
+Y u
+Y r
+Y d
+Y l
+Y u
+Y l
+G r
+Y d
+passed 109 in 142
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/11.rr========
+5
+G l
+G u
+R l
+G r
+R u
+passed 110 in 143
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/12.rr========
+17
+B l
+Y l
+G u
+R u
+R l
+R d
+R l
+B u
+R l
+Y d
+Y l
+Y u
+R d
+B d
+Y l
+G r
+Y u
+passed 111 in 144
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/13.rr========
+10
+B r
+R u
+R l
+R u
+B u
+Y r
+Y u
+Y l
+B l
+R l
+passed 112 in 145
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/14.rr========
+10
+R d
+B r
+G r
+G d
+Y l
+R r
+B d
+G d
+B l
+R l
+passed 113 in 146
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/15.rr========
+12
+Y d
+Y r
+Y d
+R d
+R r
+R d
+R r
+B l
+B d
+Y l
+R d
+Y r
+passed 114 in 147
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/16.rr========
+6
+B r
+G l
+R u
+G u
+B u
+Y u
+passed 115 in 148
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/17.rr========
+5
+B u
+B r
+Y r
+Y d
+Y r
+passed 116 in 149
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/18.rr========
+7
+G l
+G d
+G l
+G u
+B d
+B l
+G d
+passed 117 in 150
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/19.rr========
+22
+Y u
+G l
+B l
+G l
+B d
+G l
+G u
+R l
+R d
+Y r
+R u
+Y l
+R d
+Y u
+Y l
+Y u
+Y l
+R r
+R u
+R l
+G r
+Y u
+passed 118 in 151
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/2.rr========
+2
+B l
+R r
+passed 119 in 152
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/20.rr========
+7
+B r
+Y r
+Y d
+G r
+G u
+G r
+G d
+passed 120 in 153
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/3.rr========
+6
+R d
+G r
+Y r
+R l
+Y d
+Y l
+passed 121 in 154
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/4.rr========
+7
+B r
+G l
+R r
+B r
+Y r
+B d
+B r
+passed 122 in 155
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/5.rr========
+12
+B d
+B r
+G u
+B l
+G l
+B l
+B d
+Y l
+B u
+Y u
+B u
+B r
+passed 123 in 156
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/6.rr========
+8
+Y l
+R l
+R d
+B u
+B l
+G d
+Y l
+Y d
+passed 124 in 157
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/7.rr========
+10
+R r
+Y d
+B r
+G l
+G d
+B d
+R l
+Y r
+R d
+R l
+passed 125 in 158
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/8.rr========
+8
+Y u
+R l
+G l
+B l
+G u
+Y l
+R d
+G l
+passed 126 in 159
+======testes/more-rr-tests/5x5/testes/more-rr-tests/5x5/9.rr========
+2
+B r
+Y d
+passed 127 in 160
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/1.rr========
+3
+R l
+R u
+R l
+passed 128 in 161
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/10.rr========
+1
+R r
+passed 129 in 162
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/11.rr========
+3
+G r
+G d
+G r
+passed 130 in 163
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/12.rr========
+5
+R d
+B r
+R r
+R d
+R r
+passed 131 in 164
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/13.rr========
+6
+G u
+Y l
+Y u
+Y l
+Y u
+Y r
+passed 132 in 165
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/14.rr========
+5
+G l
+B l
+Y d
+R l
+R d
+passed 133 in 166
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/15.rr========
+3
+G d
+B l
+G r
+passed 134 in 167
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/16.rr========
+7
+B u
+Y l
+G l
+B l
+G d
+Y d
+B d
+passed 135 in 168
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/17.rr========
+14
+B l
+G l
+R l
+Y l
+R d
+R l
+G u
+Y u
+Y l
+Y d
+G r
+Y u
+Y l
+Y u
+passed 136 in 169
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/18.rr========
+2
+G d
+G r
+passed 137 in 170
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/19.rr========
+14
+G d
+G l
+Y l
+Y d
+B l
+B u
+B r
+G d
+R d
+R l
+G u
+B l
+B u
+R r
+passed 138 in 171
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/2.rr========
+8
+Y u
+G l
+Y l
+Y u
+R r
+Y d
+Y l
+R l
+passed 139 in 172
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/20.rr========
+12
+G u
+B r
+R u
+B u
+R u
+R l
+G d
+R d
+R r
+G u
+R l
+R u
+passed 140 in 173
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/3.rr========
+8
+G l
+B l
+Y u
+R u
+R l
+B d
+Y l
+B u
+passed 141 in 174
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/4.rr========
+9
+Y r
+G d
+R r
+R d
+Y l
+Y u
+Y r
+R r
+Y d
+passed 142 in 175
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/5.rr========
+passed 142 in 176
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/6.rr========
+23
+Y r
+G l
+R u
+R l
+B r
+B u
+B l
+R u
+R l
+R u
+Y l
+Y d
+Y r
+Y u
+B d
+Y l
+R d
+R r
+R u
+Y u
+Y l
+B u
+Y u
+passed 143 in 177
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/7.rr========
+11
+G d
+R d
+G l
+R l
+R d
+G u
+R l
+Y u
+Y r
+G l
+R u
+passed 144 in 178
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/8.rr========
+5
+R r
+B r
+G r
+G u
+B u
+passed 145 in 179
+======testes/more-rr-tests/6x6/testes/more-rr-tests/6x6/9.rr========
+9
+R r
+G d
+Y u
+B l
+B d
+Y d
+Y r
+Y d
+Y l
+passed 146 in 180
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/1.rr========
+7
+R r
+Y r
+G u
+Y u
+Y l
+Y d
+Y l
+passed 147 in 181
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/10.rr========
+2
+Y u
+R u
+passed 148 in 182
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/11.rr========
+7
+B l
+G l
+B d
+G u
+R r
+B l
+R d
+passed 149 in 183
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/12.rr========
+5
+G l
+B l
+R l
+B d
+G d
+passed 150 in 184
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/13.rr========
+10
+Y l
+R l
+R u
+R r
+R u
+G u
+G r
+G u
+G l
+B d
+passed 151 in 185
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/14.rr========
+13
+R l
+Y u
+R u
+R r
+Y l
+Y u
+Y r
+B d
+Y l
+R l
+R d
+R r
+G r
+passed 152 in 186
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/15.rr========
+3
+R u
+G u
+G l
+passed 153 in 187
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/16.rr========
+4
+G l
+R u
+B u
+G u
+passed 154 in 188
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/17.rr========
+12
+Y r
+B r
+R l
+R d
+R l
+Y d
+R r
+R u
+R l
+R u
+B r
+R r
+passed 155 in 189
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/18.rr========
+10
+B d
+B r
+R r
+G d
+G l
+G u
+G l
+R l
+Y u
+G u
+passed 156 in 190
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/19.rr========
+21
+B r
+R l
+R u
+Y r
+G d
+G r
+R u
+R r
+G r
+G u
+G l
+G u
+G r
+R d
+B l
+B d
+G r
+Y l
+R d
+R l
+B d
+passed 157 in 191
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/2.rr========
+18
+R l
+B r
+G d
+R d
+G r
+B u
+R d
+G l
+G d
+B u
+B l
+B d
+R r
+B d
+B r
+R d
+G l
+B d
+passed 158 in 192
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/20.rr========
+6
+B r
+Y d
+R r
+G u
+G r
+B d
+passed 159 in 193
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/3.rr========
+13
+Y l
+R r
+B l
+B u
+Y d
+R d
+B r
+B d
+G l
+G d
+G r
+B r
+G d
+passed 160 in 194
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/4.rr========
+14
+B l
+B u
+R r
+R d
+B r
+G d
+Y l
+Y u
+R u
+B r
+Y r
+R d
+G l
+R l
+passed 161 in 195
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/5.rr========
+10
+G d
+G l
+G u
+B u
+Y d
+G r
+B r
+Y u
+Y r
+R r
+passed 162 in 196
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/6.rr========
+13
+R d
+G d
+G r
+B d
+R l
+Y d
+B r
+B d
+Y l
+Y d
+G d
+B r
+B u
+passed 163 in 197
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/7.rr========
+8
+Y u
+B r
+G l
+G d
+G r
+B u
+Y l
+Y u
+passed 164 in 198
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/8.rr========
+10
+G r
+R u
+R l
+B d
+R d
+R r
+G u
+G l
+B r
+G d
+passed 165 in 199
+======testes/more-rr-tests/7x7/testes/more-rr-tests/7x7/9.rr========
+21
+G l
+R u
+R r
+G d
+G l
+G d
+Y u
+B l
+B u
+B r
+B u
+B l
+Y d
+B r
+Y u
+Y l
+Y d
+Y l
+B l
+G r
+Y d
+passed 166 in 200
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/1.rr========
+passed 166 in 201
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/10.rr========
+12
+G d
+G l
+B r
+Y r
+Y d
+G u
+G r
+G d
+B l
+Y l
+G d
+Y r
+passed 167 in 202
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/11.rr========
+17
+R d
+Y d
+G r
+G u
+B r
+B d
+B l
+B u
+B l
+R l
+G l
+R u
+G d
+G r
+G u
+G l
+G u
+passed 168 in 203
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/12.rr========
+3
+B r
+Y d
+B d
+passed 169 in 204
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/13.rr========
+15
+G r
+G u
+B r
+Y l
+Y u
+R l
+Y d
+B l
+B u
+R r
+B r
+Y r
+B u
+R l
+G l
+passed 170 in 205
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/14.rr========
+12
+B u
+G u
+G l
+G u
+Y d
+Y l
+Y u
+R l
+R u
+B l
+B d
+Y r
+passed 171 in 206
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/15.rr========
+12
+R r
+R d
+G d
+B r
+B d
+B r
+B d
+G l
+G d
+R r
+B d
+B l
+passed 172 in 207
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/16.rr========
+21
+G r
+R d
+R r
+Y l
+Y d
+G d
+G l
+B r
+Y d
+B l
+G d
+B d
+B l
+B u
+R r
+R d
+R l
+B r
+G u
+G l
+G u
+passed 173 in 208
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/17.rr========
+19
+G u
+G r
+G d
+B l
+G d
+G l
+R r
+R u
+R l
+R d
+G d
+G l
+B r
+Y l
+Y u
+R l
+G u
+Y r
+G r
+passed 174 in 209
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/18.rr========
+passed 174 in 210
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/19.rr========
+passed 174 in 211
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/2.rr========
+9
+G r
+B u
+R r
+B r
+Y r
+G r
+G u
+B u
+G r
+passed 175 in 212
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/20.rr========
+3
+Y d
+G r
+G u
+passed 176 in 213
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/3.rr========
+3
+Y l
+Y d
+G r
+passed 177 in 214
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/4.rr========
+8
+R r
+B r
+G d
+Y r
+G d
+G r
+B d
+B l
+passed 178 in 215
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/5.rr========
+10
+Y u
+B r
+R r
+G u
+Y u
+Y r
+Y d
+Y l
+R d
+Y d
+passed 179 in 216
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/6.rr========
+10
+G u
+R d
+Y r
+Y u
+G r
+R r
+R u
+Y u
+G l
+G u
+passed 180 in 217
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/7.rr========
+19
+G r
+Y u
+Y r
+B l
+B u
+B l
+B d
+B r
+Y d
+B r
+B d
+G d
+G r
+R r
+R d
+R l
+R u
+R r
+R d
+passed 181 in 218
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/8.rr========
+passed 181 in 219
+======testes/more-rr-tests/8x8/testes/more-rr-tests/8x8/9.rr========
+18
+G d
+R l
+R d
+G r
+R d
+G d
+R r
+G l
+R d
+Y l
+Y u
+Y l
+Y d
+Y r
+R r
+Y d
+G d
+Y l
+passed 182 in 220
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/1.rr========
+4
+Y u
+B r
+G r
+Y r
+passed 183 in 221
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/10.rr========
+15
+R l
+R u
+G u
+G l
+G u
+Y l
+Y d
+Y r
+Y u
+Y r
+Y u
+Y l
+Y u
+Y l
+R l
+passed 184 in 222
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/11.rr========
+16
+G l
+R r
+B d
+Y l
+Y d
+R d
+B l
+Y d
+B u
+Y l
+Y u
+B l
+G d
+B d
+G l
+G d
+passed 185 in 223
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/12.rr========
+27
+Y d
+R r
+G r
+G d
+B r
+B u
+B l
+B u
+Y r
+B r
+B u
+B r
+G r
+R l
+R u
+R l
+R d
+R r
+R u
+R r
+R u
+R l
+R u
+R r
+R u
+G d
+R r
+passed 186 in 224
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/13.rr========
+18
+B r
+G d
+B d
+R r
+R u
+Y r
+R d
+R r
+R d
+R l
+B u
+B l
+B u
+B r
+B u
+B r
+R d
+B d
+passed 187 in 225
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/14.rr========
+passed 187 in 226
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/15.rr========
+14
+B r
+Y d
+R d
+R l
+G l
+G u
+R r
+R u
+R l
+B u
+B r
+G l
+Y l
+B d
+passed 188 in 227
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/16.rr========
+33
+Y r
+G l
+R r
+G u
+Y u
+Y l
+Y u
+Y l
+Y d
+Y l
+Y d
+Y l
+Y d
+R l
+R d
+R r
+R u
+R l
+R u
+R l
+R u
+R r
+R u
+R l
+R u
+R l
+R d
+R l
+R d
+R l
+Y r
+R d
+R r
+passed 189 in 228
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/17.rr========
+13
+R r
+R d
+G u
+G l
+G u
+G l
+G u
+R l
+R u
+B l
+B d
+B r
+B u
+passed 190 in 229
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/18.rr========
+14
+Y r
+Y d
+Y r
+G r
+G d
+B u
+Y u
+G r
+Y d
+B d
+B l
+Y u
+B r
+Y d
+passed 191 in 230
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/19.rr========
+passed 191 in 231
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/2.rr========
+20
+Y l
+Y d
+R d
+R l
+B u
+B l
+B d
+B r
+B d
+Y r
+B u
+B r
+R u
+R l
+G u
+R r
+R d
+G r
+B u
+G u
+passed 192 in 232
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/20.rr========
+2
+G u
+G l
+passed 193 in 233
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/3.rr========
+3
+R r
+B u
+B l
+passed 194 in 234
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/4.rr========
+26
+R u
+Y u
+R l
+R u
+B l
+B u
+Y l
+Y u
+R r
+B u
+Y u
+B r
+Y u
+G d
+G l
+G u
+G l
+G u
+R d
+B r
+Y r
+G u
+B d
+Y r
+Y d
+G r
+passed 195 in 235
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/5.rr========
+13
+R u
+G u
+B r
+G r
+R l
+G u
+R r
+B d
+B l
+B u
+B r
+R l
+B d
+passed 196 in 236
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/6.rr========
+10
+G u
+Y r
+B l
+R d
+R r
+Y u
+R r
+R u
+R l
+G l
+passed 197 in 237
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/7.rr========
+18
+B u
+R l
+B l
+G l
+R d
+Y d
+Y l
+R r
+G d
+Y d
+R d
+Y l
+Y u
+B r
+Y d
+Y r
+G r
+R d
+passed 198 in 238
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/8.rr========
+21
+G r
+B d
+Y d
+Y l
+R d
+R l
+G u
+R r
+R d
+B l
+Y l
+G l
+B u
+Y l
+R u
+B l
+B u
+Y u
+G r
+B d
+R d
+passed 199 in 239
+======testes/more-rr-tests/9x9/testes/more-rr-tests/9x9/9.rr========
+4
+G u
+G l
+B u
+G u
+passed 200 in 240
+passed 200 in 240

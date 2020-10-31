@@ -7,7 +7,7 @@
 # 92560 Susana Monteiro
 
 from search import Problem, Node, astar_search, breadth_first_tree_search, \
-    depth_first_tree_search, greedy_search
+    depth_first_tree_search, greedy_search, InstrumentedProblem
 import sys
 
 #DEBUG
@@ -131,10 +131,6 @@ class Board:
     def checkGoal(self):      
         return self.targetPos == self.robots[self.targetColor]    
 
-    """ def distanceFromTarget(self):
-        return abs(self.targetPos[0] - self.robots[self.targetColor][0]) + \s
-            abs(self.targetPos[1] - self.robots[self.targetColor][1]) """
-
     def hValue(self):
         # get the gravity of the targetColored robot position
         totalGravity = 0
@@ -195,7 +191,6 @@ class RicochetRobots(Problem):
 def parse_instance(filename: str) -> Board:
     """ Lê o ficheiro cujo caminho é passado como argumento e retorna
     uma instância da classe Board. """
-    # TODO
     global wallsV
     global wallsH
     global WEIGHT
@@ -321,8 +316,9 @@ def printSolve(res):
         print(tpl[0], tpl[1])
 
 if __name__ == "__main__":
-    # TODO:
     # Ler o ficheiro de input de sys.argv[1],
     board = parse_instance(sys.argv[1])
-    res = astar_search(RicochetRobots(board))
-    printSolve(res)
+    p = InstrumentedProblem(RicochetRobots(board))
+    res = astar_search(p)
+    # printSolve(res)
+    # print("Expanded:", p.succs, "|| Generated:", p.states, "|| Sum:", p.succs + p.states)
