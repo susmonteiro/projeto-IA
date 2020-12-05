@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Grupo al089
-Student id #92456
-Student id #92560
+Duarte Bento #92456
+Susana Monteiro #92560
 """
 import numpy as np
 from math import log
+from copy import deepcopy
 
 ## GLOBAL
 
@@ -13,13 +14,13 @@ attrValues = []
 
 
 def importance(p, n):
-	posFraction = p/(n+p)
-	negFraction = n/(n+p)
 	if p == 0 or n == 0:
 		return 0
 	elif p == 1/2:
 		return 1
 	else:
+		posFraction = p/(n+p)
+		negFraction = n/(n+p)
 		return abs(posFraction*log(posFraction, 2) + negFraction*log(negFraction, 2))
 
 def calculateRest(D, Y, a_idx, totalP, totalN):
@@ -32,24 +33,26 @@ def calculateRest(D, Y, a_idx, totalP, totalN):
 		filteredY = []
 
 		# get classification of lines where attr = v
-		for idx in len(D):
+		for idx in range(len(D)):
 			if D[idx][a_idx] == v:
 				filteredY.append(Y[idx])	
 		
 		p, n = countP_N(filteredY)
-		rest += ((p + n)/(totalP, totalN))*importance(p, n)
+		rest += ((p + n)/(totalP + totalN))*importance(p, n)
 
 	return rest
 
 
 def maxGain(D, Y, attr):
+	""" returns the attribute that resultes in the max gain of information """
 	totalP, totalN = countP_N(Y) 
 	totalImportance = importance(totalP, totalN)
 
-	gains = []
+	gains = dict()
 	for a in attr:
-		gains += totalImportance - calculateRest(D, Y, a, totalP, totalN)
-	return idx
+		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
+	
+	return max(gains, key=gains.get)
 
 
 
@@ -67,9 +70,9 @@ def countP_N(Y):
 def resolveTie(Y):
 	(p, n) = countP_N(Y)
 	if p >= n:      # if count equals, we decided result to be positive
-		return p
+		return 1
 	else:
-		return n
+		return 0
 
 def isSameClassification(Y):
 	''' all examples have the same classification '''
@@ -85,18 +88,44 @@ def isSameClassification(Y):
 	return False
 
 def DTL(D, Y, attr, p_Y):
-	
-	if not Y:
+	tmpAttr = deepcopy(attr)
+
+	if len(Y) == 0:
+		#print("p_Y: ", p_Y)
+		#print("No more examples:", resolveTie(p_Y)) #debug
 		return resolveTie(p_Y) # return PLURALITY-VALUE(parents_example)
 
 	elif isSameClassification(Y):
+		#print("All have the same classification:", Y) #debug
 		return Y[0] # return the classification
 
 	elif len(attr) == 0: # if attributes is empty
+		#print("No more attributes:", resolveTie(Y)) #debug
 		return resolveTie(Y) # return PLURALITY-VALUE(examples)
 
-	# else:
-	# 	a = maxGain(examples[0], examples[1], attr)
+	else:
+		a = maxGain(D, Y, attr)
+		#print("Chosen attribute:", a) #debug
+
+		tree = [a]
+		#print(attr, a)
+		tmpAttr.remove(a)
+		for v in attrValues[a]:
+			newD = []
+			newY = []
+			for i in range(len(D)):
+				if D[i][a] == v:
+					#newD = np.append(newD, D[i])
+					#newY = np.append(newY, Y[i])
+					newD.append(D[i])
+					newY.append(Y[i])
+			#print("newD:", newD) #debug
+			#print("newY:", newY) #debug
+
+			subtree = DTL(newD, newY, tmpAttr, Y)
+			tree.append(subtree)
+		#print(tree)
+		return tree
 	
 	
 
@@ -105,6 +134,10 @@ def createdecisiontree(D, Y, noise = False):
 	# is necessary?
 	nFeatures = len(D[0])
 	nExamples = len(Y)
+	
+	Dlist = [ list(map( int, d_line.tolist())) for d_line in D]
+	Ylist = list( map( int, Y.tolist() ) )
+
 
 	# ToDo: testes 21 e 22 enviam true e falses -> int(true) = 1 e int(false) = 0 ???
 	ordem=[]
@@ -117,31 +150,31 @@ def createdecisiontree(D, Y, noise = False):
 	global attrValues
 	for a in attr:
 		lst = [] 
-		for d_line in D:
+		for d_line in Dlist:
 			v = d_line[a]
 			if v not in lst:
 				lst.append(v)
+		lst.sort()
 		attrValues.append(lst)
-	
 
-	#DTL(D, Y, attr, [])
+	if nFeatures == 0 or nExamples == 0: # in case there are no features or no examples
+		return "Erro de inpuuuuut :))))"
+	elif isSameClassification(Ylist):
+		return [0, Ylist[0], Ylist[0]]
+	else:
+		return DTL(Dlist, Ylist, attr, [])
 
-
-
-	return [0,0,1]
-
-D3 = np.array([
-			  [0,0,0],
-			  [0,0,1],
-			  [0,1,0],
-			  [0,1,1],
-			  [1,0,0],
-			  [1,0,1],
-			  [1,1,0],
-			  [1,1,1]])
-
-Y = np.array([0,1,0,1,0,1,0,1])
 
 
 if __name__ == '__main__':
-	createdecisiontree(D3, Y)
+	D20 = np.array([[0, 0, 0],
+					[0, 0, 1],
+					[0, 1, 0],
+					[0, 1, 1],
+					[1, 0, 0],
+					[1, 0, 1],
+					[1, 1, 0],
+					[1, 1, 1]])
+	Y = np.array([0, 1, 1, 0, 0, 1, 1, 0])
+
+	print(createdecisiontree(D20, Y))
