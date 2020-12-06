@@ -7,6 +7,8 @@ Susana Monteiro #92560
 import numpy as np
 from math import log, inf
 from copy import deepcopy
+from itertools import permutations	
+from random import randint
 
 ## GLOBAL
 K = 5
@@ -52,7 +54,7 @@ def maxGain(D, Y, attr):
 	gains = dict()
 	for a in attr:
 		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
-		#print("attr:", a, "gain:", gains[a]) debug
+		#print("attr:", a, "gain:", gains[a]) #debug
 	
 	
 	return max(gains, key=gains.get)
@@ -78,17 +80,29 @@ def resolveTie(Y):
 		return 0
 
 def getNoiseSets(D, Y, K, nExamples):
-	trainD = []
-	trainY = []
+	random_idxs = []
+	for i in range(nExamples//K):
+		rn = randint(0, nExamples-1) # seed
+		while rn in random_idxs:
+			rn = randint(0, nExamples-1) # seed
+		random_idxs.append(rn)
+	# print(random_idxs) # debug
+	# print(nExamples//K, len(random_idxs)) # debug
+	trainD = deepcopy(D)
+	trainY = deepcopy(Y)
 	testD = []
 	testY = []
-	for i in range(nExamples):
-		if (i % K) == 0:
-			testD.append(D[i])
-			testY.append(Y[i])
-		else:
-			trainD.append(D[i])
-			trainY.append(Y[i])
+	for i in random_idxs:
+		testD.append(D[i])
+		testY.append(Y[i])
+	random_idxs.sort(reverse=True)
+	for x in random_idxs:
+		trainD.pop(x)
+		trainY.pop(x)
+	#print("trainD", trainD) #debug 
+	#print("testD", testD) #debug
+	#print("trainY", trainY) #debug
+	#print("testY", testY) #debug
 	return trainD, trainY, testD, testY
 
 def isSameClassification(Y):
@@ -151,7 +165,7 @@ def createdecisiontree(D, Y, noise = False):
 	nFeatures = len(D[0])
 	nExamples = len(Y)
 
-	print(nExamples)
+	#print(nFeatures)
 	
 	Dlist = [ list(map( int, d_line.tolist())) for d_line in D]
 	Ylist = list( map( int, Y.tolist() ) )
@@ -179,30 +193,30 @@ def createdecisiontree(D, Y, noise = False):
 		return "Erro de inpuuuuut :))))"
 	elif isSameClassification(Ylist):
 		return [0, Ylist[0], Ylist[0]]
-	elif nFeatures < 5 and noise == False:
+	elif noise == False:
 		dtl = DTL(Dlist, Ylist, attr, [])
 		# print(dtl)
 		#return dtl
 		minDTL = inf
-		for n in range(nFeatures):
-			newDTL = DTL(Dlist, Ylist, attr, [])
+		perm = list(permutations(attr))
+		for p in perm:
+			n_attr = list(p)
+			newDTL = DTL(Dlist, Ylist, n_attr, [])
+			#print(newDTL, "\n", n_attr)
 			n = len(str(newDTL))
 			if n < minDTL:
 				#print(n, minDTL)	#debug
 				minDTL = n
 				dtl = newDTL
-			attr.append(attr.pop(attr.index(0))) # move first atribute to back of list -> permutations?
+			#attr.append(attr.pop(attr.index(0))) # move first atribute to back of list -> permutations?
 		#print(dtl)		#debug
 		return dtl
-	elif noise == False: 
-		return DTL(Dlist, Ylist, attr, [])
 	else: # if there's noise
 		for t in range(K):
-			trainD, trainY, testD, testY = getNoiseSets(D, Y, K, nExamples)
-			print(trainD)
-			print(trainY)
-			print(testD)
-			print(testY)
+			trainD, trainY, testD, testY = getNoiseSets(Dlist, Ylist, K, nExamples)
+			dtl = DTL(trainD, trainY, attr, [])
+			print(dtl)
+			
 		return
 
 
