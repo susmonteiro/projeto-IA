@@ -9,6 +9,7 @@ from math import log, inf
 from copy import deepcopy
 
 ## GLOBAL
+K = 5
 
 attrValues = []
 
@@ -76,6 +77,20 @@ def resolveTie(Y):
 	else:
 		return 0
 
+def getNoiseSets(D, Y, K, nExamples):
+	trainD = []
+	trainY = []
+	testD = []
+	testY = []
+	for i in range(nExamples):
+		if (i % K) == 0:
+			testD.append(D[i])
+			testY.append(Y[i])
+		else:
+			trainD.append(D[i])
+			trainY.append(Y[i])
+	return trainD, trainY, testD, testY
+
 def isSameClassification(Y):
 	''' all examples have the same classification '''
 	count = 0
@@ -135,6 +150,8 @@ def createdecisiontree(D, Y, noise = False):
 	# is necessary?
 	nFeatures = len(D[0])
 	nExamples = len(Y)
+
+	print(nExamples)
 	
 	Dlist = [ list(map( int, d_line.tolist())) for d_line in D]
 	Ylist = list( map( int, Y.tolist() ) )
@@ -162,7 +179,7 @@ def createdecisiontree(D, Y, noise = False):
 		return "Erro de inpuuuuut :))))"
 	elif isSameClassification(Ylist):
 		return [0, Ylist[0], Ylist[0]]
-	elif nFeatures < 5:
+	elif nFeatures < 5 and noise == False:
 		dtl = DTL(Dlist, Ylist, attr, [])
 		# print(dtl)
 		#return dtl
@@ -177,8 +194,16 @@ def createdecisiontree(D, Y, noise = False):
 			attr.append(attr.pop(attr.index(0))) # move first atribute to back of list -> permutations?
 		#print(dtl)		#debug
 		return dtl
-	else: 
+	elif noise == False: 
 		return DTL(Dlist, Ylist, attr, [])
+	else: # if there's noise
+		for t in range(K):
+			trainD, trainY, testD, testY = getNoiseSets(D, Y, K, nExamples)
+			print(trainD)
+			print(trainY)
+			print(testD)
+			print(testY)
+		return
 
 
 
@@ -193,4 +218,5 @@ if __name__ == '__main__':
 					[1, 1, 1]])
 	Y = np.array([0, 1, 1, 0, 0, 1, 1, 0])
 
-	print(createdecisiontree(D20, Y))
+
+	print(createdecisiontree(D20, Y, True))
