@@ -11,7 +11,7 @@ from itertools import permutations
 from random import randint
 
 ## GLOBAL
-K = 5
+K = 10
 
 attrValues = []
 
@@ -118,6 +118,31 @@ def isSameClassification(Y):
 		
 	return False
 
+def noiseClassify(T,data):
+	# copiado dos professores
+    
+    data = np.array(data)
+    out = []
+    for el in data:
+        #print("el",el,"out",out,"\nT",T)
+        wT = T
+        for ii in range(len(el)):
+            #print(T[0],el[T[0]],T)
+            if el[wT[0]]==0:
+                if isinstance(wT[1],int):
+                    out += [wT[1]]
+                    break
+                else:
+                    wT = wT[1]
+            else:
+                if isinstance(wT[2],int):
+                    out += [wT[2]]
+                    break
+                else:
+                    wT = wT[2]
+    return np.array(out)
+    #return out
+
 def DTL(D, Y, attr, p_Y):
 	tmpAttr = deepcopy(attr)
 
@@ -197,9 +222,14 @@ def createdecisiontree(D, Y, noise = False):
 		dtl = DTL(Dlist, Ylist, attr, [])
 		# print(dtl)
 		#return dtl
-		minDTL = inf
+		minDTL = len(str(dtl))
 		perm = list(permutations(attr))
+		print("end permutations")
+		countP = 0
 		for p in perm:
+			if countP > 100:
+				break
+			countP += 1
 			n_attr = list(p)
 			newDTL = DTL(Dlist, Ylist, n_attr, [])
 			#print(newDTL, "\n", n_attr)
@@ -208,16 +238,28 @@ def createdecisiontree(D, Y, noise = False):
 				#print(n, minDTL)	#debug
 				minDTL = n
 				dtl = newDTL
+				break # after finding at least 1 best value
 			#attr.append(attr.pop(attr.index(0))) # move first atribute to back of list -> permutations?
 		#print(dtl)		#debug
 		return dtl
 	else: # if there's noise
+		minDTL = []
+		minErr = inf
 		for t in range(K):
 			trainD, trainY, testD, testY = getNoiseSets(Dlist, Ylist, K, nExamples)
-			dtl = DTL(trainD, trainY, attr, [])
-			print(dtl)
-			
-		return
+			# dtl = DTL(trainD, trainY, attr, [])
+			# print(dtl)	# debug
+			tryY = noiseClassify(dtl, testD)
+			# print(testY) # debug
+			# print(tryY)	 # debug
+			err = np.mean(np.abs(np.array(testY)-Y))
+			if (err < minErr):
+				minDTL = deepcopy(dtl)
+				minErr = err
+			# print(err) # debug
+			print(minDTL)
+			print(type(minDTL))
+		return minDTL
 
 
 
@@ -233,4 +275,4 @@ if __name__ == '__main__':
 	Y = np.array([0, 1, 1, 0, 0, 1, 1, 0])
 
 
-	print(createdecisiontree(D20, Y, True))
+	print(createdecisiontree(D20, Y))
