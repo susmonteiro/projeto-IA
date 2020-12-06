@@ -5,7 +5,7 @@ Duarte Bento #92456
 Susana Monteiro #92560
 """
 import numpy as np
-from math import log
+from math import log, inf
 from copy import deepcopy
 
 ## GLOBAL
@@ -51,6 +51,8 @@ def maxGain(D, Y, attr):
 	gains = dict()
 	for a in attr:
 		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
+		#print("attr:", a, "gain:", gains[a]) debug
+	
 	
 	return max(gains, key=gains.get)
 
@@ -130,7 +132,6 @@ def DTL(D, Y, attr, p_Y):
 	
 
 def createdecisiontree(D, Y, noise = False):
-	
 	# is necessary?
 	nFeatures = len(D[0])
 	nExamples = len(Y)
@@ -161,8 +162,37 @@ def createdecisiontree(D, Y, noise = False):
 		return "Erro de inpuuuuut :))))"
 	elif isSameClassification(Ylist):
 		return [0, Ylist[0], Ylist[0]]
-	else:
+	elif nFeatures < 5:
+		dtl = DTL(Dlist, Ylist, attr, [])
+		# print(dtl)
+		#return dtl
+		minDTL = inf
+		for n in range(nFeatures):
+			newDTL = DTL(Dlist, Ylist, attr, [])
+			n = len(str(newDTL))
+			if n < minDTL:
+				#print(n, minDTL)	#debug
+				minDTL = n
+				dtl = newDTL
+			attr.append(attr.pop(attr.index(0))) # move first atribute to back of list -> permutations?
+		#print(dtl)		#debug
+		return dtl
+	else: 
 		return DTL(Dlist, Ylist, attr, [])
+
+
+	# arvores mais pequenas 
+	#	- repetir o algoritmo com uma ordem diferente dos atributos
+	#	- podar a arvore -> necessario?
+	# supostamente basta ter uma arvore mais pequena do que aquela do algoritmo base (ver anuncio)
+	# ou seja basta fazer as permutacoes dos atributos e ir correndo ate encontrar uma mais pequena?
+	# mas se houver muitos atributos... como no teste 22, torna resolver este teste muito pesado
+
+	# ruido
+	#	- dividir os exemplos em conjunto de treino e de testes
+	#	- conjunto de testes tem tamanho 1/k, sendo k o numero de iteracoes
+	#	e de arvores que se vao gerar 
+	#	- ver qual e a hipotese que tem menor erro no conjunto de teste -> e' aquele que queremos minimizar
 
 
 
