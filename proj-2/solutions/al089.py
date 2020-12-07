@@ -8,10 +8,11 @@ import numpy as np
 from math import log, inf
 from copy import deepcopy
 from itertools import permutations	
-from random import randint
-
+from random import randint, seed
+from time import time
 import datasetstreelearning
 
+seed(time())
 
 ## GLOBAL
 _debug_ =  False
@@ -20,22 +21,6 @@ K = 10
 EMPTY_TREE = 2
 attrValues = []
 
-
-
-def getSubdicMax(dic):
-    maxV = -inf
-    res = []
-
-    for k in dic.keys():
-        if dic[k] < maxV:
-            continue
-        elif dic[k] == maxV:
-            res.append(k)
-        else: ## x > maxV
-            maxV = dic[k]
-            res = [k]
-
-    return res
 
 ###
 ###		Create Decision Tree
@@ -70,190 +55,42 @@ def createdecisiontree(D, Y, noise = False):
 	elif isSameClassification(Ylist):
 		return [0, Ylist[0], Ylist[0]]
 	elif noise == False:
-		dtl = DTL(Dlist, Ylist, attr, [], True)
-		return checkDupBranches(dtl)
+		dtl = DTL(Dlist, Ylist, attr, [], perm=True)
+		return removeDupBranches(dtl)
 	else: # if there's noise
-		minDTL = []
-		minErr = inf
-		for _ in range(K):
-			trainD, trainY, testD, testY = getNoiseSets(Dlist, Ylist, K, nExamples)
-			dtl = DTL(trainD, trainY, attr, [])
-			_debug_ and print(dtl)
-			tryY = noiseClassify(dtl, testD)
-			_debug_ and print(testY)
-			_debug_ and print(tryY)
-			err = np.mean(np.abs(np.array(testY)-tryY))
-			if (err < minErr):
-				minDTL = deepcopy(dtl)
-				minErr = err
-			_debug_ and  print(err)
-			#print(minDTL)
-			#print(type(minDTL))
-		return minDTL
-
-
-def noiseClassify(T,data):
-	# copiado dos professores
-    
-    data = np.array(data)
-    out = []
-    for el in data:
-        #print("el",el,"out",out,"\nT",T)
-        wT = T
-        for ii in range(len(el)):
-            #print(T[0],el[T[0]],T)
-            if el[wT[0]]==0:
-                if isinstance(wT[1],int):
-                    out += [wT[1]]
-                    break
-                else:
-                    wT = wT[1]
-            else:
-                if isinstance(wT[2],int):
-                    out += [wT[2]]
-                    break
-                else:
-                    wT = wT[2]
-    return np.array(out)
-
-
-###
-###		Tree Learning Algorithm
-###
-
-
-
-def importance(p, n):
-	if p == 0 or n == 0:
-		return 0
-	elif p == 1/2:
-		return 1
-	else:
-		posFraction = p/(n+p)
-		negFraction = n/(n+p)
-		return abs(posFraction*log(posFraction, 2) + negFraction*log(negFraction, 2))
-
-def calculateRest(D, Y, a_idx, totalP, totalN):
-	''' Calculate the sum of the rest for a  given attribute '''
-	attrVect = attrValues[a_idx]
-	rest = 0
-
-	# calculate importance for each value of attr
-	for v in attrVect:
-		filteredY = []
-
-		# get classification of lines where attr = v
-		for idx in range(len(D)):
-			if D[idx][a_idx] == v:
-				filteredY.append(Y[idx])	
+		dtl = DTLnoise(Dlist, Ylist, K, attr, nExamples)
+		return removeDupBranches(dtl)
 		
-		p, n = countP_N(filteredY)
-		rest += ((p + n)/(totalP + totalN))*importance(p, n)
 
-	return rest
-
-
-def maxGain(D, Y, attr):
-	""" returns the attribute that resultes in the max gain of information """
-	totalP, totalN = countP_N(Y) 
-	totalImportance = importance(totalP, totalN)
-
-	gains = dict()
-	for a in attr:
-		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
-		_debug_ and print("attr:", a, "gain:", gains[a])
-	
-	return getSubdicMax(gains)
-
-
-
-def countP_N(Y):
-	""" returns a tuple with count of positive and negative """
-	p, n = 0,0
-	for x in Y:
-		if x == 1:
-			p += 1
-		else:
-			n += 1
- 
-	return (p, n)
-
-def resolveTie(Y):
-	(p, n) = countP_N(Y)
-	if p >= n:      # if count equals, we decided result to be positive
-		return 1
-	else:
-		return 0
-
-def getNoiseSets(D, Y, K, nExamples):
-	random_idxs = []
-	for i in range(nExamples//K):
-		rn = randint(0, nExamples-1) # seed
-		while rn in random_idxs:
-			rn = randint(0, nExamples-1) # seed
-		random_idxs.append(rn)
-	_debug_ and  print(random_idxs)
-	_debug_ and  print(nExamples//K, len(random_idxs))
-	trainD = deepcopy(D)
-	trainY = deepcopy(Y)
-	testD = []
-	testY = []
-	for i in random_idxs:
-		testD.append(D[i])
-		testY.append(Y[i])
-	random_idxs.sort(reverse=True)
-	for x in random_idxs:
-		trainD.pop(x)
-		trainY.pop(x)
-	_debug_ and print("trainD", trainD) # 
-	_debug_ and print("testD", testD) #
-	_debug_ and print("trainY", trainY) #
-	_debug_ and print("testY", testY) #
-	return trainD, trainY, testD, testY
-
-def isSameClassification(Y):
-	''' all examples have the same classification '''
-	count = 0
-	for x in Y:
-		if x == 0:
-			count += 1
-		elif count != 0:
-			break
-	if count == 0 or count == len(Y): 
-		return True
-		
-	return False
-
-def checkDupBranches(tree):
+def removeDupBranches(tree):
 	idx = tree[0]
 	t1 = tree[1]
 	t2 = tree[2]
 	if isinstance(t1, int) and isinstance(t2, int): # [idx, v1, v2]
 		_debug_ and print("both are ints:", tree)
-		return tree
+		pass
 	elif isinstance(t1, int):	# [idx, v1, [...]]
-		t2 = checkDupBranches(t2)
+		t2 = removeDupBranches(t2)
 		tree = [idx, t1, t2]
 		_debug_ and print("t1 is int:", tree)
-		return tree
 	elif isinstance(t2, int):	# [idx, [...], v2]
-		t1 = checkDupBranches(t1)
+		t1 = removeDupBranches(t1)
 		tree = [idx, t1, t2]
 		_debug_ and print("t2 is int:", tree)
-		return tree
-	else:
-		t1 = checkDupBranches(tree[1])
-		t2 = checkDupBranches(tree[2])
+	else:	# [idx, [...], [...]]
+		t1 = removeDupBranches(tree[1])
+		t2 = removeDupBranches(tree[2])
 		if t1[0] != t2[0]: # there are no repeated branches
-			return tree
+			pass
+		elif t1[1] == t2[1] and t1[2] == t2[2]:
+			tree = t1		# remove root node
 		elif t1[1] == t2[1]: # negative branches are duplicated
 			_debug_ and print("negative branches duplicated")
 			tree[0] = t1[0]
-			tree[1] = t1[1]
+			tree[1] = t1[1] # == tree[1] = t2[1]
 			tree[2][0] = idx
 			tree[2][1] = t1[2]
 			_debug_ and print(tree)
-			return tree
 		elif t1[2] == t2[2]: # positive branches are duplicated
 			_debug_ and print("positive branches duplicated")
 			tree[0] = t1[0]
@@ -261,23 +98,12 @@ def checkDupBranches(tree):
 			tree[1][0] = idx
 			tree[1][2] = t2[1]
 			_debug_ and print(tree)
-			return tree
-
-
-
-
-
-	# for test 22
-	""" if isinstance(tree[1], list) and isinstance(tree[2], list) and tree[1][0] == tree[2][0] and tree[1][1] == tree[2][1]:
-		#print("Duplicate Branches")
-		idx = tree[0]
-		tree[0] = tree[1][0]
-		repeatedBranch = tree[1][1]
-		notRepeatedBranch = tree[1][2]
-		tree[1] = repeatedBranch
-		tree[2][0] = idx
-		tree[2][1] = notRepeatedBranch """	
 	return tree
+
+
+###
+###		Tree Learning Algorithm (NO noise)
+###
 
 
 def DTL(D, Y, attr, p_Y, perm=False):
@@ -306,14 +132,12 @@ def DTL(D, Y, attr, p_Y, perm=False):
 			matrixAttr = [[attrLst[-1]]]	#only the first attribute that maximizes gain
 				
 		tree = []					# final (local) best tree	
-
 		for aList in matrixAttr:	# loop through [[a1,(a2,...)],([a1,(a2,...)]...)]
 			tmpTree = []
 
 			for a in aList:			# loop through [a1,(a2,...)]
 
 				tmp2Tree = [a]		# tree (local) root index 
-
 				tmpAttr = deepcopy(attr)
 				tmpAttr.remove(a)	# subtracts A from main list of attributes
 
@@ -343,8 +167,182 @@ def DTL(D, Y, attr, p_Y, perm=False):
 					tree = deepcopy(tmpTree)
 
 		return tree
+
+
+def maxGain(D, Y, attr):
+	""" returns the attribute that resultes in the max gain of information """
+	totalP, totalN = countP_N(Y) 
+	totalImportance = importance(totalP, totalN)
+
+	gains = dict()
+	for a in attr:
+		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
+		_debug_ and print("attr:", a, "gain:", gains[a])
 	
-	
+	return getSubdicMax(gains)
+
+
+def resolveTie(Y):
+	(p, n) = countP_N(Y)
+	if p >= n:      # if count equals, we decided result to be positive
+		return 1
+	else:
+		return 0
+
+def isSameClassification(Y):
+	''' all examples have the same classification '''
+	count = 0
+	for x in Y:
+		if x == 0:
+			count += 1
+		elif count != 0:
+			break
+	if count == 0 or count == len(Y): 
+		return True
+		
+	return False
+
+
+
+###
+###		Tree Learning Algorithm (WITH noise)
+###
+
+def DTLnoise(D, Y, K, attr, nExamples):
+	minTree = []
+	minErr = inf
+	for _ in range(K):
+		trainD, trainY, testD, testY = getNoiseSets(D, Y, K, nExamples)
+		tree = DTL(trainD, trainY, attr, [], perm=True)
+		_debug_ and print(tree)
+		tryY = noiseClassify(tree, testD)
+		_debug_ and print(testY)
+		_debug_ and print(tryY)
+		err = np.mean(np.abs(np.array(testY)-tryY))
+		if (err < minErr):
+			minTree = deepcopy(tree)
+			minErr = err
+		_debug_ and  print(err)
+		#print(minDTL)
+		#print(type(minDTL))
+	return minTree
+
+
+def getNoiseSets(D, Y, K, nExamples):
+	random_idxs = []
+	for i in range(nExamples//K):
+		rn = randint(0, nExamples-1)
+		while rn in random_idxs:
+			rn = randint(0, nExamples-1)
+		random_idxs.append(rn)
+	_debug_ and  print(random_idxs)
+	_debug_ and  print(nExamples//K, len(random_idxs))
+	trainD = deepcopy(D)
+	trainY = deepcopy(Y)
+	testD = []
+	testY = []
+	for i in random_idxs:
+		testD.append(D[i])
+		testY.append(Y[i])
+	random_idxs.sort(reverse=True)
+	for x in random_idxs:
+		trainD.pop(x)
+		trainY.pop(x)
+	_debug_ and print("trainD", trainD) 
+	_debug_ and print("testD", testD)
+	_debug_ and print("trainY", trainY)
+	_debug_ and print("testY", testY)
+	return trainD, trainY, testD, testY
+
+
+def noiseClassify(T,data):
+	# copiado dos professores
+    
+    data = np.array(data)
+    out = []
+    for el in data:
+        #print("el",el,"out",out,"\nT",T)
+        wT = T
+        for ii in range(len(el)):
+            #print(T[0],el[T[0]],T)
+            if el[wT[0]]==0:
+                if isinstance(wT[1],int):
+                    out += [wT[1]]
+                    break
+                else:
+                    wT = wT[1]
+            else:
+                if isinstance(wT[2],int):
+                    out += [wT[2]]
+                    break
+                else:
+                    wT = wT[2]
+    return np.array(out)
+
+
+
+
+###
+###		Utils
+###
+
+def getSubdicMax(dic):
+    maxV = -inf
+    res = []
+
+    for k in dic.keys():
+        if dic[k] < maxV:
+            continue
+        elif dic[k] == maxV:
+            res.append(k)
+        else: ## x > maxV
+            maxV = dic[k]
+            res = [k]
+
+    return res
+
+
+def importance(p, n):
+	if p == 0 or n == 0:
+		return 0
+	elif p == 1/2:
+		return 1
+	else:
+		posFraction = p/(n+p)
+		negFraction = n/(n+p)
+		return abs(posFraction*log(posFraction, 2) + negFraction*log(negFraction, 2))
+
+
+def calculateRest(D, Y, a_idx, totalP, totalN):
+	''' Calculate the sum of the rest for a  given attribute '''
+	attrVect = attrValues[a_idx]
+	rest = 0
+
+	# calculate importance for each value of attr
+	for v in attrVect:
+		filteredY = []
+
+		# get classification of lines where attr = v
+		for idx in range(len(D)):
+			if D[idx][a_idx] == v:
+				filteredY.append(Y[idx])	
+		
+		p, n = countP_N(filteredY)
+		rest += ((p + n)/(totalP + totalN))*importance(p, n)
+
+	return rest
+
+
+def countP_N(Y):
+	""" returns a tuple with count of positive and negative """
+	p, n = 0,0
+	for x in Y:
+		if x == 1:
+			p += 1
+		else:
+			n += 1
+ 
+	return (p, n)
 
 
 
@@ -368,4 +366,4 @@ if __name__ == '__main__':
 
 	print("len D:", len(D[0]), "D:", D)
 	print("len Y:", len(Y), "Y:", Y)
-	print(createdecisiontree(D,Y))
+	print(createdecisiontree(D,Y, noise=True))
