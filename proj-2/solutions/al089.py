@@ -51,15 +51,15 @@ def createdecisiontree(D, Y, noise = False):
 	elif isSameClassification(Ylist):
 		return [0, Ylist[0], Ylist[0]]
 	elif noise == False:
-		dtl = DTL(Dlist, Ylist, attr, [], perm=True)
-		return removeDupBranches(dtl)
+		tree = DTL(Dlist, Ylist, attr, [], perm=True)
+		return removeDupBranches(tree)
 	else: # if there's noise
-		dtl = DTLnoise(Dlist, Ylist, K, attr, nExamples)
-		return removeDupBranches(dtl)
+		tree = DTLnoise(Dlist, Ylist, K, attr, nExamples)
+		return removeDupBranches(tree)
 		
 
 def removeDupBranches(tree):
-	""" Recursive function thar given a dtl, returns an equivalent dtl with no unnecessary repeated branches """
+	""" Recursive function that given a tree, returns an equivalent tree with no unnecessary repeated branches """
 	idx = tree[0]
 	t1 = tree[1]
 	t2 = tree[2]
