@@ -4,8 +4,8 @@ import random
 
 def dataset(datasetnumb):
     
-    nl = [9, 17, 9, 9, 17, 17, 17, 17, 9, 9, 9, 9, 9, 9, 9, 9, 9, 17, 41, 25, 57, 49, 90]
-    ol = [9, 17, 9, 9, 17, 17, 17, 17, 9, 9, 9, 9, 9, 9, 9, 9, 9, 17, 41, 25, 25, 49, 67]
+    nl = [9, 9, 17, 9, 9, 9, 17, 9, 17, 9, 17, 9, 9, 9, 17, 9, 9, 17, 41, 25, 57, 49, 90, 25, 33, 25, 41]
+    ol = [9, 9, 17, 9, 9, 9, 17, 9, 17, 9, 17, 9, 9, 9, 17, 9, 9, 17, 41, 25, 25, 49, 67, 25, 33, 25, 41]
     
     D2 = np.array([
                   [0,0],
@@ -21,10 +21,19 @@ def dataset(datasetnumb):
               [1,0,1],
               [1,1,0],
               [1,1,1]])
+    D4 = np.array([
+              [1,0,0,0],
+              [0,0,0,1],
+              [1,0,1,0],
+              [0,0,1,1],
+              [1,1,0,0],
+              [0,1,0,1],
+              [1,1,1,0],
+              [0,1,1,1]])    
     
     if datasetnumb<16:
         D = D2
-        Y = (np.array([datasetnumb//8,datasetnumb//4,datasetnumb//2,datasetnumb//1])>0).astype('int32')
+        Y = (np.array([datasetnumb%16,datasetnumb%8,datasetnumb%4,datasetnumb%2])>0).astype('int32')
     elif datasetnumb==16:
         D = D3
         Y = np.array([0,1,0,1,0,1,0,1])
@@ -48,6 +57,18 @@ def dataset(datasetnumb):
         np.random.seed(13102020)
         D = np.random.rand(5000,12)>0.5
         Y = ((D[:,1] == 0) & (D[:,6] == 0)) | ((D[:,3] == 1) & (D[:,4] == 1) | ((D[:,11] == 1) & (D[:,6] == 1)))
+    elif datasetnumb==23:
+        D = D4
+        Y = (np.array([datasetnumb%2,datasetnumb%4,datasetnumb%2,datasetnumb%8,datasetnumb%16,datasetnumb%8,datasetnumb%23,datasetnumb%2])>0).astype('int32')        
+    elif datasetnumb==24:
+        D = D4
+        Y = (np.array([datasetnumb%2,datasetnumb%4,datasetnumb%16,datasetnumb%8,datasetnumb%16,datasetnumb%8,datasetnumb%4,datasetnumb%2])>0).astype('int32')        
+    elif datasetnumb==25:
+        D = D4
+        Y = (np.array([datasetnumb%2,datasetnumb%4,datasetnumb%2,datasetnumb%8,datasetnumb%16,datasetnumb%25,datasetnumb%4,datasetnumb%2])>0).astype('int32')        
+    elif datasetnumb==26:
+        D = D4
+        Y = (np.array([datasetnumb%2,datasetnumb%4,datasetnumb%16,datasetnumb%8,datasetnumb%16,datasetnumb%8,datasetnumb%4,datasetnumb%2])>0).astype('int32')        
     
     return D,Y,nl[datasetnumb],ol[datasetnumb]
 
@@ -98,4 +119,4 @@ def datasetnoise(datasetnumb):
     return D,Y,Dt,Yt,nl[datasetnumb],ol[datasetnumb]
 
 if __name__ == "__main__":
-    D,Y = datasetnoise(2)
+    D,Y,Dt,Yt,nl,ol = datasetnoise(2)

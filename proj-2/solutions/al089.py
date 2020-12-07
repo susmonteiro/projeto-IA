@@ -10,12 +10,10 @@ from copy import deepcopy
 from itertools import permutations	
 from random import randint, seed
 from time import time
-# import datasetstreelearning
 
 seed(time())
 
 ## GLOBAL
-_debug_ =  False
 
 K = 10
 EMPTY_TREE = 2
@@ -66,16 +64,13 @@ def removeDupBranches(tree):
 	t1 = tree[1]
 	t2 = tree[2]
 	if isinstance(t1, int) and isinstance(t2, int): # [idx, v1, v2]
-		_debug_ and print("both are ints:", tree)
 		pass
 	elif isinstance(t1, int):	# [idx, v1, [...]]
 		t2 = removeDupBranches(t2)
 		tree = [idx, t1, t2]
-		_debug_ and print("t1 is int:", tree)
 	elif isinstance(t2, int):	# [idx, [...], v2]
 		t1 = removeDupBranches(t1)
 		tree = [idx, t1, t2]
-		_debug_ and print("t2 is int:", tree)
 	else:	# [idx, [...], [...]]
 		t1 = removeDupBranches(tree[1])
 		t2 = removeDupBranches(tree[2])
@@ -84,19 +79,15 @@ def removeDupBranches(tree):
 		elif t1[1] == t2[1] and t1[2] == t2[2]:
 			tree = t1		# remove root node
 		elif t1[1] == t2[1]: # negative branches are duplicated
-			_debug_ and print("negative branches duplicated")
 			tree[0] = t1[0]
 			tree[1] = t1[1] # == tree[1] = t2[1]
 			tree[2][0] = idx
 			tree[2][1] = t1[2]
-			_debug_ and print(tree)
 		elif t1[2] == t2[2]: # positive branches are duplicated
-			_debug_ and print("positive branches duplicated")
 			tree[0] = t1[0]
 			tree[2] = t1[2]
 			tree[1][0] = idx
 			tree[1][2] = t2[1]
-			_debug_ and print(tree)
 	return tree
 
 
@@ -107,20 +98,16 @@ def removeDupBranches(tree):
 def DTL(D, Y, attr, p_Y, perm=False):
 	""" Recursive function that given a set of examples and results, returns a decision tree """
 	if len(Y) == 0:
-		_debug_ and print("No more examples:", resolveTie(p_Y))
 		return resolveTie(p_Y) # return PLURALITY-VALUE(parents_example)
 
 	elif isSameClassification(Y):
-		_debug_ and print("All have the same classification:", Y)
 		return Y[0] # return the classification
 
 	elif len(attr) == 0: # if attributes is empty
-		_debug_ and print("No more attributes:", resolveTie(Y))
 		return resolveTie(Y) # return PLURALITY-VALUE(examples)
 
 	else:
 		attrLst = maxGain(D, Y, attr)
-		_debug_ and print("Chosen attributes:", attrLst)
 
 		if perm:
 			# get all permutations of attributes with max gain
@@ -131,13 +118,14 @@ def DTL(D, Y, attr, p_Y, perm=False):
 		tree = []					# final (local) best tree	
 		for aList in matrixAttr:	# loop through [[a1,(a2,...)],([a1,(a2,...)]...)]
 			tmpTree = []
+			minlen = inf
 
 			for a in aList:			# loop through [a1,(a2,...)]
 
 				tmp2Tree = [a]		# tree (local) root index 
 				tmpAttr = deepcopy(attr)
 				tmpAttr.remove(a)	# subtracts A from main list of attributes
-
+				min2len = inf
 
 				for v in attrValues[a]:	# loop through [v1, v2, ...] (column of attribute a)
 					newD = []
@@ -147,21 +135,20 @@ def DTL(D, Y, attr, p_Y, perm=False):
 							newD.append(D[i])
 							newY.append(Y[i])
 
-					_debug_ and print("newD:", newD) 
-					_debug_ and print("newY:", newY)
-
 					subtree = DTL(newD, newY, tmpAttr, Y, perm)	# propagates perm decision
 					tmp2Tree.append(subtree)
 			
 				# for one list attribute
-				if len(str(tmpTree)) == EMPTY_TREE or len(str(tmp2Tree)) < len(str(tmpTree)):
+				if len(str(tmp2Tree)) < min2len:
 					# shorter tree, update
 					tmpTree = deepcopy(tmp2Tree)
+					min2len = len(str(tmp2Tree))
 			
 			# for all permutations
-			if len(str(tree)) == EMPTY_TREE or len(str(tmpTree)) < len(str(tree)):
+			if len(str(tmpTree)) < minlen:
 					# shorter tree, update
 					tree = deepcopy(tmpTree)
+					minlen = len(str(tmpTree))
 
 		return tree
 
@@ -174,7 +161,6 @@ def maxGain(D, Y, attr):
 	gains = dict()
 	for a in attr:
 		gains[a] = totalImportance - calculateRest(D, Y, a, totalP, totalN)
-		_debug_ and print("attr:", a, "gain:", gains[a])
 	
 	return getSubdicMax(gains)
 
@@ -213,15 +199,11 @@ def DTLnoise(D, Y, K, attr, nExamples, perm=True):
 	for _ in range(K):
 		trainD, trainY, testD, testY = getNoiseSets(D, Y, K, nExamples)
 		tree = DTL(trainD, trainY, attr, [], perm)
-		_debug_ and print(tree)
 		tryY = noiseClassify(tree, testD)
-		_debug_ and print(testY)
-		_debug_ and print(tryY)
 		err = np.mean(np.abs(np.array(testY)-tryY))
 		if (err < minErr):
 			minTree = deepcopy(tree)
 			minErr = err
-		_debug_ and  print(err)
 	return minTree
 
 
@@ -231,14 +213,11 @@ def getNoiseSets(D, Y, K, nExamples):
 	and (k-1)/k examples for learning """
 	random_idxs = []	# set of random indexes to be part of the test set
 	
-	for i in range(nExamples//K): # fill random_idxs
+	for _ in range(nExamples//K): # fill random_idxs
 		rn = randint(0, nExamples-1)
 		while rn in random_idxs:
 			rn = randint(0, nExamples-1)
 		random_idxs.append(rn)
-
-	_debug_ and print(random_idxs)
-	_debug_ and print(nExamples//K, len(random_idxs))
 
 	trainD = deepcopy(D)
 	trainY = deepcopy(Y)
@@ -251,11 +230,6 @@ def getNoiseSets(D, Y, K, nExamples):
 			testY.append(trainY.pop(i))
 			random_idxs.remove(i)
 
-	_debug_ and print("trainD", trainD) 
-	_debug_ and print("testD", testD)
-	_debug_ and print("trainY", trainY)
-	_debug_ and print("testY", testY)
-
 	return trainD, trainY, testD, testY
 
 
@@ -267,7 +241,7 @@ def noiseClassify(T,data):
 	out = []
 	for el in data:
 		wT = T
-		for ii in range(len(el)):
+		for _ in range(len(el)):
 			if el[wT[0]]==0:
 				if isinstance(wT[1],int):
 					out += [wT[1]]
@@ -281,8 +255,6 @@ def noiseClassify(T,data):
 				else:
 					wT = wT[2]
 	return np.array(out)
-
-
 
 
 ###
@@ -352,12 +324,4 @@ def countP_N(Y):
 
 
 if __name__ == '__main__':
-
-	# global _debug_
-	_debug_ = True
-
-	# D,Y, _, __= datasetstreelearning.dataset(22)
-
-	# print("len D:", len(D[0]), "D:", D)
-	# print("len Y:", len(Y), "Y:", Y)
-	# print(createdecisiontree(D,Y, noise=True))
+	pass
