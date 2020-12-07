@@ -8,10 +8,11 @@ import numpy as np
 from math import log, inf
 from copy import deepcopy
 from itertools import permutations	
-from random import randint, seed
 from time import time
+import datasetstreelearning
+import random
 
-seed(time())
+random.seed(time())
 
 ## GLOBAL
 
@@ -196,9 +197,24 @@ def DTLnoise(D, Y, K, attr, nExamples, perm=True):
 	""" Generates a decision tree that scores best (lowest error) """
 	minTree = []
 	minErr = inf
-	for _ in range(K):
-		trainD, trainY, testD, testY = getNoiseSets(D, Y, K, nExamples)
-		tree = DTL(trainD, trainY, attr, [], perm)
+	sets = getNoiseSets(D, Y, K, nExamples)
+	for s in sets:
+		trainD = deepcopy(D)
+		trainY = deepcopy(Y)
+		testD = []
+		testY = []
+		
+		for i in range(nExamples-1, -1, -1):
+			if i in s:
+				testD.append(trainD.pop(i))
+				testY.append(trainY.pop(i))
+				s.remove(i)
+
+		if isSameClassification(trainY):
+			tree = [0, trainY[0], trainY[0]]
+		else:
+			tree = DTL(trainD, trainY, attr, [], perm)
+
 		tryY = noiseClassify(tree, testD)
 		err = np.mean(np.abs(np.array(testY)-tryY))
 		if (err < minErr):
@@ -211,26 +227,20 @@ def getNoiseSets(D, Y, K, nExamples):
 	""" Generates sets to train for noise.
 	Randomly choose 1/k of the data set to be tests\
 	and (k-1)/k examples for learning """
-	random_idxs = []	# set of random indexes to be part of the test set
 	
-	for _ in range(nExamples//K): # fill random_idxs
-		rn = randint(0, nExamples-1)
-		while rn in random_idxs:
-			rn = randint(0, nExamples-1)
-		random_idxs.append(rn)
+	# split in k arrays
+	sets = []
+	exampleLst = [idx for idx in range(nExamples)]	# list of all example id
+	random.shuffle(exampleLst)
 
-	trainD = deepcopy(D)
-	trainY = deepcopy(Y)
-	testD = []
-	testY = []
+	i = 0
+	while len(exampleLst) != 0: 
+		if len(sets) < K:
+			sets.append(list())
+		sets[i].append(exampleLst.pop())
+		i = (i+1)%K
 
-	for i in range(nExamples-1, -1, -1):
-		if i in random_idxs:
-			testD.append(trainD.pop(i))
-			testY.append(trainY.pop(i))
-			random_idxs.remove(i)
-
-	return trainD, trainY, testD, testY
+	return sets
 
 
 def noiseClassify(T,data):
