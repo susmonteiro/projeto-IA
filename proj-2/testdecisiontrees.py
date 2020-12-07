@@ -91,16 +91,16 @@ for file in files:
                         elif l<nl:
                             res = G+'GOOD SMALL TREE (1+bonus)'+W
                             pointsshort += 1
-                        else:
-                            if ol<nl:
+                        else: #l==nl
+                            if ol<nl: #ol<l
                                 res = O+'OK but it is possible to make it shorter! (1)'+W
                             else:
                                 res = G+'OK (1)'+W
                     else:
                         res = R+'Erro (0)r'+W
                     print("    errors > ", err, "tree length", l, " ", res  )
-                    #print("\nD", D, "\nY", Y)
-                    #print("tree > ", T)
+                    print("\nD", D, "\nY", Y)
+                    print("tree size : ", len(str(T)), "> ", T)
                 except:
                     print(R+"Test failed")
             print("points", points, "/23", "short", pointsshort, "/2")
@@ -114,7 +114,7 @@ for file in files:
                 D,Y,Dt,Yt,nl,ol = datasetstreelearning.datasetnoise(idataset)        
                                     
                 print("dataset > ", idataset, "#points >", D.shape[0], "#feat >", D.shape[1])
-                #print("\nD", D, "\nY", Y)
+                # print("\nD", D, "\nY", Y)
                 try:
                     Tc = M.createdecisiontree(D,Y,noise=0.1)
                     Ytrain = classify(Tc,D)
